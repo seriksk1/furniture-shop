@@ -1,6 +1,5 @@
 export * from "./NoMatch"
-export * from "./Login"
-export * from "./Register"
+export * from "./Auth"
 export * from "./Home"
 export * from "./Cart"
 export * from "./Product"
