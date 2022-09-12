@@ -1,9 +1,7 @@
-export * from "./ProtectedRoute"
-
 import React from "react"
 import { Route, Routes } from "react-router"
-import { ProtectedRoute } from "./ProtectedRoute"
 import { Cart, NoMatch, Home, Login, Product, Register } from "../pages"
+import { ProtectedRoute } from "./ProtectedRoute"
 import { appPaths } from "../constants"
 
 export const AppRoutes = () => {
