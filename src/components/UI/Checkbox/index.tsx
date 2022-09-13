@@ -1,5 +1,10 @@
 import React from "react"
 
-export const Checkbox = () => {
+interface CheckboxProps {
+  text?: string
+  checked: boolean
+}
+
+export const Checkbox: React.FC<CheckboxProps> = ({ text, checked }) => {
   return <div>Checkbox</div>
 }

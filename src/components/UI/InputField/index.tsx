@@ -15,20 +15,16 @@ export const InputField: React.FC<InputFIeldProps> = ({
   error,
   onChange,
 }) => {
-  const defaultClasses =
-    "w-full h-[60px] flex items-center text-[14px] leading-[21px] text-black px-[28px] py-[20px] mt-[25px] rounded border-[1px] border-gray placeholder:text-gray"
-  const classes = classNames(defaultClasses, className)
-
   return (
     <div>
       <input
-        className={classes}
+        className={className}
         placeholder={placeholder}
         required={required}
         value={value}
         onChange={onChange}
       />
-      {error && <div className="text-red">{helperText}</div>}
+      {error && <div>{helperText}</div>}
     </div>
   )
 }
