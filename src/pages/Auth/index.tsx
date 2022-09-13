@@ -1,6 +1,6 @@
 import React from "react"
 import { LogoIcon } from "../../assets/icons"
-import { AuthForm } from "../../components"
+import { AuthForm } from "../../containers"
 import styles from "./Auth.module.pcss"
 
 const authBackgroundImage = require("../../assets/images/auth-bg-1.png")

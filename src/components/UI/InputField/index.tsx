@@ -1,40 +1,29 @@
-import classNames from "classnames"
 import React from "react"
+import classNames from "classnames"
+import { UseFormRegisterReturn } from "react-hook-form"
 import styles from "./InputField.module.pcss"
 
 interface InputFIeldProps {
-  size?: "small" | "medium" | "large"
-  error?: boolean
-  required?: boolean
-  placeholder?: string
-  helperText?: string
   className?: string
-  value: string | null
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
+  size?: "small" | "medium" | "large"
+  placeholder?: string
+  register: UseFormRegisterReturn
+  error?: string
 }
 
 export const InputField: React.FC<InputFIeldProps> = ({
-  placeholder = "Input text...",
-  helperText = "An error was acquired",
-  value,
-  size = "large",
   className,
-  required,
+  size = "large",
+  placeholder,
+  register,
   error,
-  onChange,
 }) => {
-  const classes = classNames(styles.input, styles[size], className)
+  const classes = classNames(styles.input, styles[size])
 
   return (
-    <div>
-      <input
-        className={classes}
-        placeholder={placeholder}
-        required={required}
-        value={value || ""}
-        onChange={onChange}
-      />
-      {error ? <div>{helperText}</div> : null}
+    <div className={className}>
+      <input className={classes} placeholder={placeholder} {...register} />
+      {error && <div className={styles.error}>{error}</div>}
     </div>
   )
 }
