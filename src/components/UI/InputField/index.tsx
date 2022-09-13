@@ -1,30 +1,40 @@
 import classNames from "classnames"
 import React from "react"
+import styles from "./InputField.module.pcss"
 
-interface InputFIeldProps extends React.HTMLProps<HTMLInputElement> {
+interface InputFIeldProps {
+  size?: "small" | "medium" | "large"
   error?: boolean
+  required?: boolean
+  placeholder?: string
   helperText?: string
+  className?: string
+  value: string | null
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
 export const InputField: React.FC<InputFIeldProps> = ({
-  className,
   placeholder = "Input text...",
-  value,
   helperText = "An error was acquired",
-  required = false,
+  value,
+  size = "large",
+  className,
+  required,
   error,
   onChange,
 }) => {
+  const classes = classNames(styles.input, styles[size], className)
+
   return (
     <div>
       <input
-        className={className}
+        className={classes}
         placeholder={placeholder}
         required={required}
-        value={value}
+        value={value || ""}
         onChange={onChange}
       />
-      {error && <div>{helperText}</div>}
+      {error ? <div>{helperText}</div> : null}
     </div>
   )
 }

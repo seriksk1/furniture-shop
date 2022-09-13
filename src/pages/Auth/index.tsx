@@ -1,23 +1,19 @@
 import React from "react"
 import { LogoIcon } from "../../assets/icons"
-import { Button, InputField } from "../../components"
+import { AuthForm } from "../../components"
+import styles from "./Auth.module.pcss"
 
 const authBackgroundImage = require("../../assets/images/auth-bg-1.png")
 
 export const Auth: React.FC = () => {
   return (
-    <div>
-      <div>
-        <LogoIcon />
-        <div>
-          <InputField />
-          <InputField />
-          <Button>Forgot Password?</Button>
-          <Button>Login</Button>
-        </div>
+    <div className={styles.page}>
+      <div className={styles.container}>
+        <LogoIcon className={styles.logo} />
+        <AuthForm />
       </div>
-      <div>
-        <img src={authBackgroundImage} alt="interior" />
+      <div className={styles.container}>
+        <img className={styles.image} src={authBackgroundImage} alt="interior" />
       </div>
     </div>
   )

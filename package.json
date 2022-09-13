@@ -18,7 +18,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.2",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
@@ -56,6 +57,7 @@
     "postcss-hexrgba": "^2.0.1",
     "postcss-import": "^14.1.0",
     "postcss-loader": "^7.0.0",
+    "postcss-modules-values": "^4.0.0",
     "postcss-nested": "^5.0.6",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",
