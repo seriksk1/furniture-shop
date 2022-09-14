@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin")
 const TerserWebpackPlugin = require("terser-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const PostcssModuleValuesPlugin = require("postcss-modules-values")
 
 const isDevelopment = process.env.NODE_ENV === "development"
 const isProduction = !isDevelopment
@@ -102,6 +103,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: isProduction ? "static/css/[name].[contenthash].css" : "static/css/[name].css",
     }),
+    PostcssModuleValuesPlugin,
   ],
   optimization: optimization(),
   devServer: {
