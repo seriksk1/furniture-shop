@@ -1,10 +1,10 @@
 import React from "react"
 
-interface LogoIconProps {
+interface Props {
   className?: string
 }
 
-export const LogoIcon: React.FC<LogoIconProps> = ({ className }) => {
+export const LogoIcon: React.FC<Props> = ({ className }) => {
   return (
     <svg
       className={className}

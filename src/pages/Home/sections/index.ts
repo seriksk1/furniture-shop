@@ -1,0 +1,6 @@
+export * from "./BestProducts/BestProducts"
+export * from "./Categories/Categories"
+export * from "./DiscountBanner/DiscountBanner"
+export * from "./Hero/Hero"
+export * from "./NewProducts/NewProducts"
+export * from "./SubscribeUs/SubscribeUs"

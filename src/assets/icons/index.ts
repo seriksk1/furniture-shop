@@ -1,1 +1,6 @@
 export * from "./LogoIcon"
+export * from "./SearchOutlined"
+export * from "./ShoppingCartFilled"
+export * from "./AccountCircleOutlined"
+export * from "./ArrowForward"
+export * from "./StarOutlined"
