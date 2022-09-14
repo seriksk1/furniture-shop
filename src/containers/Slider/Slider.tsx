@@ -1,9 +1,10 @@
 import React from "react"
 import classNames from "classnames"
-import styles from "./CustomSlider.module.pcss"
 import Slider, { Settings } from "react-slick"
+import { ChevronLeft } from "../../assets/icons"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import styles from "./CustomSlider.module.pcss"
 
 interface CustomSliderProps extends React.PropsWithChildren {
   pagination?: boolean
@@ -12,6 +13,8 @@ interface CustomSliderProps extends React.PropsWithChildren {
   autoplaySpeed?: number
   slidesToShow?: number
   className?: string
+  nextArrow?: JSX.Element
+  prevArrow?: JSX.Element
 }
 
 export const CustomSlider: React.FC<CustomSliderProps> = ({
@@ -21,6 +24,8 @@ export const CustomSlider: React.FC<CustomSliderProps> = ({
   infinite,
   autoplaySpeed = 1000,
   slidesToShow = 1,
+  nextArrow = <ChevronLeft />,
+  prevArrow = <ChevronLeft />,
   className,
 }) => {
   const classes = classNames(styles.slider, className)
@@ -33,6 +38,8 @@ export const CustomSlider: React.FC<CustomSliderProps> = ({
     autoplaySpeed: autoplaySpeed,
     slidesToShow: slidesToShow,
     slidesToScroll: 1,
+    nextArrow: nextArrow,
+    prevArrow: prevArrow,
     appendDots: (dots) => (
       <div>
         <ul className={styles.bullets}>{dots}</ul>
@@ -40,6 +47,8 @@ export const CustomSlider: React.FC<CustomSliderProps> = ({
     ),
     customPaging: (i) => <button className={styles.bullet} />,
   }
+
+  console.log(styles)
 
   return (
     <Slider className={classes} {...settings}>
