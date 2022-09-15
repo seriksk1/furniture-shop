@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path")
+const Dotenv = require("dotenv-webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const TerserWebpackPlugin = require("terser-webpack-plugin")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
@@ -103,6 +103,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: isProduction ? "static/css/[name].[contenthash].css" : "static/css/[name].css",
     }),
+    new Dotenv(),
     PostcssModuleValuesPlugin,
   ],
   optimization: optimization(),

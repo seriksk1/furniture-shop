@@ -3,7 +3,7 @@ import { prepareHeadersWithToken } from "../../../utils"
 
 export const authApi = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: `${process.env.REACT_APP_URI}/auth`,
+    baseUrl: `${process.env.DB_HOST}/auth`,
     prepareHeaders: prepareHeadersWithToken,
   }),
   endpoints: (builder) => ({
