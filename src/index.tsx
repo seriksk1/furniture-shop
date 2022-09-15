@@ -3,7 +3,7 @@ import { Provider } from "react-redux"
 import { createRoot } from "react-dom/client"
 import { BrowserRouter } from "react-router-dom"
 import { AppRoutes } from "./routes"
-import { store } from "./store"
+import { store } from "./store/store"
 import "./index.pcss"
 
 const container = document.getElementById("root")
