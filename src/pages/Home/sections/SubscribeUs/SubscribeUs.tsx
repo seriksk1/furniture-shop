@@ -22,8 +22,13 @@ export const SubscribeUs: React.FC<SubscribeUsProps> = ({ className }) => {
       </div>
       <div className={styles.form}>
         <div className={styles.wrap}>
+          <input
+            className={styles.input}
+            value={value || ""}
+            placeholder="Email..."
+            onChange={onChange}
+          />
           <div className={styles.label}>EMAIL ADDRESS</div>
-          <input className={styles.input} value={value || ""} onChange={onChange} />
         </div>
         <Button className={styles.button} size="small">
           Subscribe Us

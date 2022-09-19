@@ -31,8 +31,9 @@
 
 .wrap {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   margin-right: 35px;
+  min-width: 240px;
 }
 
 .label {
@@ -47,10 +48,14 @@
   border: none;
   border-bottom: 1px solid #333333;
 
+  &:placeholder {
+    color: #bdbdbd;
+  }
+
   &:focus {
     border-bottom: 1px solid #ffbf43;
 
-    .label {
+    & ~ .label {
       color: #ffbf43;
     }
   }
