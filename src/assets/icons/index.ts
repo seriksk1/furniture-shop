@@ -1,3 +1,5 @@
+export * from "./footer"
+export * from "./socials"
 export * from "./LogoIcon"
 export * from "./SearchOutlined"
 export * from "./ShoppingCartFilled"

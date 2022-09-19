@@ -1,18 +1,26 @@
 .card {
   display: flex;
-  width: 474px;
+  justify-content: space-between;
+  width: calc(100% - 20px);
   height: 270px;
-  padding: 0 24px 28px;
+  padding: 24px;
   background: #f2f2f2;
+}
+
+.image {
+  height: 100%;
 }
 
 .info {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  margin-right: 10px;
+  min-width: 115px;
 }
 
 .name {
+  width: min-content;
   font-weight: 500;
   font-size: 20px;
   line-height: 150%;
