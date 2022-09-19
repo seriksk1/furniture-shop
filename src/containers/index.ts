@@ -1,4 +1,4 @@
-export * from "./AuthForm"
-export * from "./Header"
-export * from "./Footer"
+export * from "./AuthForm/AuthForm"
+export * from "./Header/Header"
+export * from "./Footer/Footer"
 export * from "./CustomSlider/CustomSlider"
