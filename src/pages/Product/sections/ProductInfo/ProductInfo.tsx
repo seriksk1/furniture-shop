@@ -2,7 +2,7 @@ import React from "react"
 import classNames from "classnames"
 import styles from "./ProductInfo.module.pcss"
 import productImage from "../../../../assets/images/auth-bg-1.png"
-import { Button, Counter, Rating } from "../../../../components"
+import { Accordion, Button, Counter, Rating } from "../../../../components"
 import { ArrowForward } from "../../../../assets/icons"
 
 interface ProductInfoProps {
@@ -80,8 +80,28 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className }) => {
         </div>
 
         <div className={styles.accordions}>
-          <div className={styles.accordion}></div>
-          <div className={styles.accordion}></div>
+          <Accordion className={styles.accordion} title="Overwiew & Dimentions">
+            <div className={styles.accordionText}>
+              {`This platform elevates your bedroom with a sleek, modern look. It's crafted from solid
+              wood with a black finish contemporary profile.`}
+            </div>
+            <div className={styles.accordionText}>
+              {`This platform elevates your bedroom with a sleek, modern look. It's crafted from solid
+              wood with a black finish contemporary profile. The panel headboard strikes a
+              rectangular silhouette, and it's upholstered and stuffed with polyester.`}
+            </div>
+          </Accordion>
+          <Accordion className={styles.accordion} title="Shipping & Returns">
+            <div className={styles.accordionText}>
+              {`This platform elevates your bedroom with a sleek, modern look. It's crafted from solid
+              wood with a black finish contemporary profile.`}
+            </div>
+            <div className={styles.accordionText}>
+              {`This platform elevates your bedroom with a sleek, modern look. It's crafted from
+              solid wood with a black finish contemporary profile. The panel headboard strikes a
+              rectangular silhouette, and it's upholstered and stuffed with polyester.`}
+            </div>
+          </Accordion>
         </div>
       </div>
     </div>

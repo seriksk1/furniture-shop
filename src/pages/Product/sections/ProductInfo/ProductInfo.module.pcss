@@ -121,3 +121,24 @@
     }
   }
 }
+
+.accordions {
+  display: flex;
+  flex-direction: column;
+
+  .accordion {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    .accordionText {
+      font-size: 16px;
+      line-height: 150%;
+      color: #333333;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
