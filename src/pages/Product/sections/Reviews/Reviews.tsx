@@ -3,41 +3,55 @@ import classNames from "classnames"
 import styles from "./Reviews.module.pcss"
 import { Button, ButtonGroup, Dropdown } from "../../../../components"
 import { PlusIcon } from "../../../../assets/icons"
+import { MessageContainer } from "../../../../containers"
+import { questions, reviews } from "../../../../mocks"
 
 interface ReviewsProps {
   className: string
 }
 
-type MessagesType = "review" | "question"
+enum MessageTypes {
+  question = "question",
+  review = "review",
+}
 
 const sortTypes = ["Relevance", "Last Update", "First Update"]
 
 export const Reviews: React.FC<ReviewsProps> = ({ className }) => {
-  const [messagesType, setMessagesType] = React.useState<MessagesType>("review")
   const classes = classNames(styles.container, className)
+  const [messages, setMessages] = React.useState<ProductMessageList>([])
+  const [messagesType, setMessagesType] = React.useState<MessagesType>(MessageTypes.review)
 
-  const onMessagesTypeToggle = () => {
-    setMessagesType((prev) => (prev === "review" ? "question" : "review"))
+  const onReviewsTypeSet = () => {
+    setMessagesType(MessageTypes.review)
   }
+
+  const onQuestionsTypeSet = () => {
+    setMessagesType(MessageTypes.question)
+  }
+
+  React.useEffect(() => {
+    setMessages(messagesType === MessageTypes.review ? reviews : questions)
+  }, [messagesType])
 
   return (
     <div className={classes}>
       <ButtonGroup className={styles.selection}>
         <Button
-          className={messagesType === "review" ? styles.selected : styles.notSelected}
-          onClick={onMessagesTypeToggle}
+          className={messagesType === MessageTypes.review ? styles.selected : styles.notSelected}
+          onClick={onReviewsTypeSet}
           type="borderless"
           size="small"
         >
-          Reviews ({5})
+          Reviews ({reviews.length})
         </Button>
         <Button
-          className={messagesType === "question" ? styles.selected : styles.notSelected}
-          onClick={onMessagesTypeToggle}
+          className={messagesType === MessageTypes.question ? styles.selected : styles.notSelected}
+          onClick={onQuestionsTypeSet}
           type="borderless"
           size="small"
         >
-          Q&A ({3})
+          Q&A ({questions.length})
         </Button>
       </ButtonGroup>
 
@@ -53,7 +67,16 @@ export const Reviews: React.FC<ReviewsProps> = ({ className }) => {
         <Dropdown className={styles.dropdown} list={sortTypes} />
       </div>
 
-      <div className=""></div>
+      <div className={styles.messages}>
+        {messages.map((message, i) => (
+          <MessageContainer
+            key={i}
+            className={styles.message}
+            message={message}
+            messageType={messagesType}
+          />
+        ))}
+      </div>
     </div>
   )
 }

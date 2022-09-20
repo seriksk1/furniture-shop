@@ -69,7 +69,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className }) => {
         </div>
 
         <div className={styles.bottom}>
-          <Button className={styles.button} size="small">
+          <Button size="small">
             <span>Add to cart</span>
             <ArrowForward />
           </Button>

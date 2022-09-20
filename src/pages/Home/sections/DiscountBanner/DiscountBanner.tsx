@@ -23,9 +23,7 @@ export const DiscountBanner: React.FC<DiscountBannerProps> = ({ className }) => 
           <div className={styles.title}>Save up to</div>
           <div className={styles.value}>30%</div>
           <div className={styles.subtitle}>OFF</div>
-          <Button className={styles.button} size="small">
-            Shop Now
-          </Button>
+          <Button size="small">Shop Now</Button>
         </div>
       </div>
       <Tip type="sale" />

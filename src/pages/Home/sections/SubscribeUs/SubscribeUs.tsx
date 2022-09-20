@@ -30,9 +30,7 @@ export const SubscribeUs: React.FC<SubscribeUsProps> = ({ className }) => {
           />
           <div className={styles.label}>EMAIL ADDRESS</div>
         </div>
-        <Button className={styles.button} size="small">
-          Subscribe Us
-        </Button>
+        <Button size="small">Subscribe Us</Button>
       </div>
     </div>
   )
