@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  max-width: 30px;
+  font-size: 20px;
+  line-height: 150%;
+  margin: 0 26px;
+  text-align: center;
+  color: #333333;
+  border: none;
+  outline: none;
+
+  &:focus {
+    border-bottom: 1px solid #333333;
+  }
+}
+
+.button {
+  height: fit-content;
+  padding: 2px;
+
+  path {
+    fill: #333333;
+  }
+
+  &:not(:disabled) {
+    &:hover {
+      border: 1px solid transparent;
+      background: #ffbf43;
+    }
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
