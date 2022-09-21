@@ -58,7 +58,7 @@ export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
       <div className={styles.content}>
         <div className={styles.title}>Best Selling Product</div>
         <div className={styles.subtitle}>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-        <Button size="small">
+        <Button className={styles.button} size="small">
           <span>See all</span>
           <ArrowForward />
         </Button>

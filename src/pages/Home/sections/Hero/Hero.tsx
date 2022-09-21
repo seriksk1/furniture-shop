@@ -22,7 +22,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
           <div className={styles.subtitle}>
             We have 2000+ Review and our customers trust on our Furniture and Quality products
           </div>
-          <Button className={styles.button} color="white" size="small">
+          <Button className={styles.button} size="small">
             <span>Buy now</span>
             <ArrowForward />
           </Button>

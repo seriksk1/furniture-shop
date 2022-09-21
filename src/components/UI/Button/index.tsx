@@ -5,7 +5,6 @@ import styles from "./Button.module.pcss"
 export interface ButtonProps extends React.PropsWithChildren {
   size?: "small" | "medium" | "large"
   type?: "borderless" | "outlined" | "filled"
-  color?: "white" | "dark" | "transparent"
   submit?: boolean
   fullWidth?: boolean
   disabled?: boolean
@@ -16,7 +15,6 @@ export interface ButtonProps extends React.PropsWithChildren {
 export const Button: React.FC<ButtonProps> = ({
   size = "medium",
   type = "filled",
-  color = "dark",
   submit,
   fullWidth,
   className,
@@ -28,7 +26,6 @@ export const Button: React.FC<ButtonProps> = ({
     styles.button,
     styles[size],
     styles[type],
-    styles[color],
     {
       [styles.full]: fullWidth,
     },

@@ -5,7 +5,7 @@ import { StarOutlined } from "../../../assets/icons"
 
 interface RatingProps {
   stars: RatingType
-  className?: string
+  className: string
 }
 
 export const Rating: React.FC<RatingProps> = ({ stars, className }) => {
