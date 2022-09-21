@@ -57,7 +57,7 @@
 .filled {
   border: none;
 
-  &:hover {
+  &:not(:disabled):hover {
     background: #ffbf43;
     color: #333333;
 
@@ -65,12 +65,6 @@
       path {
         fill: #333333;
       }
-    }
-  }
-
-  &:disabled {
-    &:hover {
-      background: #333333;
     }
   }
 }

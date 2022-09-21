@@ -28,19 +28,22 @@
 
 .tools {
   display: flex;
-}
 
-.icon {
-  margin-right: 15px;
-  cursor: pointer;
+  a {
+    display: flex;
+    width: fit-content;
+    height: fit-content;
 
-  &:last-child {
-    margin: 0;
-  }
+    &:not(:last-child) {
+      margin-right: 15px;
+    }
 
-  &:hover {
-    path {
-      fill: #ffbf43;
+    &:hover {
+      .icon {
+        path {
+          fill: #ffbf43;
+        }
+      }
     }
   }
 }
