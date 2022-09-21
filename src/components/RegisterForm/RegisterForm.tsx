@@ -3,8 +3,10 @@ import { Link } from "react-router-dom"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { registerFormSchema } from "./register-form.validation"
-import { Button, InputField } from "../UI"
+import { Button, Checkbox, InputField } from "../UI"
 import styles from "./RegisterForm.module.pcss"
+import { useToggle } from "../../hooks"
+import { appPaths } from "../../constants"
 
 interface IRegisterFormInput {
   email: string
@@ -20,6 +22,8 @@ export const RegisterForm: React.FC = () => {
   } = useForm<IRegisterFormInput>({
     resolver: yupResolver(registerFormSchema),
   })
+
+  const { active: termsChecked, onToggle: onTermsToggle } = useToggle(false)
 
   const onSubmit: SubmitHandler<IRegisterFormInput> = (data) => {
     console.log(data)
@@ -49,8 +53,13 @@ export const RegisterForm: React.FC = () => {
         error={errors?.confirmPassword?.message}
       />
 
-      <div className={styles.forgotPassword}>
-        <Link to="/forgot-password">Forgot Password?</Link>
+      <div className={styles.terms}>
+        <Checkbox className={styles.checkbox} onToggle={onTermsToggle} checked={termsChecked}>
+          <span>I agree with </span>
+          <Link className={styles.link} to={appPaths.home}>
+            Terms and Conditions
+          </Link>
+        </Checkbox>
       </div>
 
       <Button size="large" disabled={!isDirty} fullWidth submit>

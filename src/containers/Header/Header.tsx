@@ -36,9 +36,15 @@ export const Header: React.FC = () => {
         ))}
       </div>
       <div className={styles.tools}>
-        <AccountCircleOutlined className={styles.icon} />
-        <ShoppingCartFilled className={styles.icon} />
-        <SearchOutlined className={styles.icon} />
+        <Link to={appPaths.home}>
+          <AccountCircleOutlined className={styles.icon} />
+        </Link>
+        <Link to={appPaths.cart}>
+          <ShoppingCartFilled className={styles.icon} />
+        </Link>
+        <Link to={appPaths.product}>
+          <SearchOutlined className={styles.icon} />
+        </Link>
       </div>
     </div>
   )

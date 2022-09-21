@@ -5,6 +5,7 @@ import styles from "./InputField.module.pcss"
 
 interface InputFIeldProps {
   className?: string
+  type?: React.HTMLInputTypeAttribute
   size?: "small" | "medium" | "large"
   placeholder?: string
   register: UseFormRegisterReturn
@@ -13,6 +14,7 @@ interface InputFIeldProps {
 
 export const InputField: React.FC<InputFIeldProps> = ({
   className,
+  type = "text",
   size = "large",
   placeholder,
   register,
@@ -22,7 +24,7 @@ export const InputField: React.FC<InputFIeldProps> = ({
 
   return (
     <div className={className}>
-      <input className={classes} placeholder={placeholder} {...register} />
+      <input className={classes} type={type} placeholder={placeholder} {...register} />
       {error && <div className={styles.error}>{error}</div>}
     </div>
   )
