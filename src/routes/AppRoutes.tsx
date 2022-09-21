@@ -1,7 +1,7 @@
 import React from "react"
 import { Route, Routes } from "react-router"
 import { Cart, NoMatch, Home, Auth, Product } from "../pages"
-import { ProtectedRoute } from "./ProtectedRoute"
+import { ProtectedRoute } from "./ProtectedRoute/ProtectedRoute"
 import { appPaths } from "../constants"
 import { DefaultLayout } from "../layouts"
 

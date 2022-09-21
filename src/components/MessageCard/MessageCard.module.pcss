@@ -1,0 +1,75 @@
+.card {
+  width: 100%;
+  padding: 20px 50px;
+  border: 1px solid #bdbdbd;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.user {
+  display: flex;
+
+  .avatar {
+    margin-right: 12px;
+  }
+
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .username {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    color: #333333;
+  }
+
+  .date {
+    font-size: 14px;
+    line-height: 150%;
+    color: #bdbdbd;
+  }
+}
+
+.bottom {
+  .message {
+    font-size: 16px;
+    line-height: 150%;
+    color: #333333;
+  }
+
+  .answers {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+
+    .icon {
+      margin-right: 10px;
+      cursor: pointer;
+
+      &:hover {
+        path {
+          stroke: #ffbf43;
+        }
+      }
+    }
+
+    .amount {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 150%;
+      text-decoration: underline;
+      color: #333333;
+      cursor: pointer;
+
+      &:hover {
+        color: #ffbf43;
+      }
+    }
+  }
+}

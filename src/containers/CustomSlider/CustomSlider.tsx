@@ -48,8 +48,6 @@ export const CustomSlider: React.FC<CustomSliderProps> = ({
     customPaging: (i) => <button className={styles.bullet} />,
   }
 
-  console.log(styles)
-
   return (
     <Slider className={classes} {...settings}>
       {children}

@@ -20,8 +20,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ className, product, ti
       <Rating className={styles.stars} stars={stars} />
       <div className={styles.name}>{name}</div>
       <div className={styles.price}>
-        {price}
-        {discountPrice && `/${discountPrice}`}
+        {discountPrice ? <span className={styles.priceBefore}>{price}</span> : price}
+        {discountPrice && <span className={styles.priceAfter}>{discountPrice}</span>}
       </div>
       {discountPrice && <Tip type="sale" positionX={tipPositionX} />}
       {isNew && <Tip type="new" positionX={tipPositionX} />}
