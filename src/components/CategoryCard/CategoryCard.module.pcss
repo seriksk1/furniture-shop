@@ -5,31 +5,60 @@
   height: 270px;
   padding: 24px;
   background: var(--color-light);
+
+  .image {
+    height: 100%;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-right: 10px;
+    min-width: 115px;
+  }
+
+  .top {
+    margin-bottom: 70px;
+
+    .name {
+      width: min-content;
+      text-align: left;
+      margin-bottom: 4px;
+    }
+
+    .amount {
+    }
+  }
+
+  .link {
+    width: fit-content;
+    text-align: center;
+  }
 }
 
-.image {
-  height: 100%;
-}
+@media screen and (max-width: 1024px) {
+  .card {
+    padding: 16px;
 
-.info {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  margin-right: 10px;
-  min-width: 115px;
-}
+    .info {
+      justify-content: space-between;
 
-.name {
-  width: min-content;
-  text-align: left;
-  margin-bottom: 4px;
-}
+      .top {
+        margin-bottom: 0;
+      }
+    }
 
-.amount {
-  margin-bottom: 70px;
-}
+    .name {
+      font-size: var(--text-size-s);
+    }
 
-.link {
-  width: fit-content;
-  text-align: center;
+    .amount {
+      font-size: var(--text-size-xs);
+    }
+
+    .link {
+      font-size: var(--text-size-xs);
+    }
+  }
 }

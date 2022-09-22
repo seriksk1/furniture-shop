@@ -3,11 +3,13 @@ import { Link } from "react-router-dom"
 import {
   AccountCircleOutlined,
   LogoIcon,
+  MenuIcon,
   SearchOutlined,
   ShoppingCartFilled,
 } from "../../assets/icons"
 import { Typography, TypographySizes } from "../../components"
 import { appPaths } from "../../constants"
+import { useMobileDevice } from "../../hooks"
 import styles from "./Header.module.pcss"
 
 export interface NavLink {
@@ -26,26 +28,38 @@ const navigationLinks: NavLinkList = [
 ]
 
 export const Header: React.FC = () => {
+  const isMobileDevice = useMobileDevice()
+
   return (
     <div className={styles.header}>
-      <LogoIcon />
-      <div className={styles.navbar}>
-        {navigationLinks.map(({ name, path }) => (
-          <Typography key={name} className={styles.link} size={TypographySizes.medium}>
-            <Link to={path}>{name}</Link>
-          </Typography>
-        ))}
-      </div>
+      {isMobileDevice && <MenuIcon className={styles.menuIcon} />}
+
+      <LogoIcon className={styles.logo} />
+
+      {!isMobileDevice && (
+        <div className={styles.navbar}>
+          {navigationLinks.map(({ name, path }) => (
+            <Typography key={name} className={styles.link} size={TypographySizes.medium}>
+              <Link to={path}>{name}</Link>
+            </Typography>
+          ))}
+        </div>
+      )}
+
       <div className={styles.tools}>
-        <Link to={appPaths.home}>
-          <AccountCircleOutlined className={styles.icon} />
-        </Link>
+        {!isMobileDevice && (
+          <Link to={appPaths.home}>
+            <AccountCircleOutlined className={styles.icon} />
+          </Link>
+        )}
         <Link to={appPaths.cart}>
           <ShoppingCartFilled className={styles.icon} />
         </Link>
-        <Link to={appPaths.product}>
-          <SearchOutlined className={styles.icon} />
-        </Link>
+        {!isMobileDevice && (
+          <Link to={appPaths.product}>
+            <SearchOutlined className={styles.icon} />
+          </Link>
+        )}
       </div>
     </div>
   )

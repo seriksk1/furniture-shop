@@ -20,7 +20,7 @@ export const NewProducts: React.FC<NewProductsProps> = ({ className }) => {
 
   return (
     <div className={classes}>
-      <Typography className={styles.title} size={TypographySizes.large}>
+      <Typography className={styles.title} size={TypographySizes.extraLarge}>
         New Products
       </Typography>
       <Typography
@@ -32,7 +32,7 @@ export const NewProducts: React.FC<NewProductsProps> = ({ className }) => {
       </Typography>
       <div className={styles.products}>
         {newProducts.map((product, i) => (
-          <ProductCard key={i} product={product} className={styles.card} />
+          <ProductCard key={i} className={styles.card} product={product} />
         ))}
       </div>
       <Button className={styles.button}>

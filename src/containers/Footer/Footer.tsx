@@ -97,16 +97,18 @@ export const Footer: React.FC = () => {
           </div>
         </div>
         <div className={styles.bottom}>
-          <div className={styles.socials}>
+          <div className={styles.wrap}>
             <LogoIcon className={styles.logo} />
-            <InstagramIcon className={styles.social} />
-            <FacebookIcon className={styles.social} />
-            <YoutubeIcon className={styles.social} />
-          </div>
-          <div className={styles.documents}>
-            <Typography className={styles.document}>Help</Typography>
-            <Typography className={styles.document}>Privacy</Typography>
-            <Typography className={styles.document}>Terms</Typography>
+            <div className={styles.socials}>
+              <InstagramIcon className={styles.social} />
+              <FacebookIcon className={styles.social} />
+              <YoutubeIcon className={styles.social} />
+            </div>
+            <div className={styles.documents}>
+              <Typography className={styles.document}>Help</Typography>
+              <Typography className={styles.document}>Privacy</Typography>
+              <Typography className={styles.document}>Terms</Typography>
+            </div>
           </div>
           <Typography className={styles.text}>Copyright © 2022 Furniture Corporation</Typography>
         </div>

@@ -11,6 +11,7 @@ import {
 } from "../../../../components"
 import { CustomSlider } from "../../../../containers"
 import { bestProducts } from "../../../../mocks"
+import { useMobileDevice } from "../../../../hooks"
 
 interface BestProductsProps {
   className?: string
@@ -18,6 +19,7 @@ interface BestProductsProps {
 
 export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
+  const isMobileDevice = useMobileDevice()
 
   return (
     <div className={classes}>
@@ -32,11 +34,13 @@ export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing.
         </Typography>
-        <Button>
+
+        <Button className={styles.button}>
           <span>See all</span>
           <ArrowForward />
         </Button>
       </div>
+
       <CustomSlider
         className={styles.slider}
         slidesToShow={3}
@@ -47,6 +51,17 @@ export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
           <ProductCard key={i} product={product} />
         ))}
       </CustomSlider>
+
+      <div className={styles.products}>
+        {bestProducts.slice(0, 3).map((product, i) => (
+          <ProductCard key={i} className={styles.product} product={product} />
+        ))}
+      </div>
+
+      <Button className={styles.button} fullWidth>
+        <span>See all</span>
+        <ArrowForward />
+      </Button>
     </div>
   )
 }

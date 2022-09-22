@@ -48,7 +48,7 @@ export const DiscountBanner: React.FC<DiscountBannerProps> = ({ className }) => 
           >
             OFF
           </Typography>
-          <Button>Shop Now</Button>
+          <Button className={styles.button}>Shop Now</Button>
         </div>
       </div>
       <Tip type={TipTypes.sale} />

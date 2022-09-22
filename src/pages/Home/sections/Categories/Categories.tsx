@@ -25,6 +25,7 @@ export const Categories: React.FC<CategoriesProps> = ({ className }) => {
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </Typography>
+
       <CustomSlider
         className={styles.slider}
         slidesToShow={3}
@@ -35,6 +36,12 @@ export const Categories: React.FC<CategoriesProps> = ({ className }) => {
           <CategoryCard key={i} category={category} />
         ))}
       </CustomSlider>
+
+      <div className={styles.categories}>
+        {categories.slice(0, 2).map((category, i) => (
+          <CategoryCard key={i} className={styles.category} category={category} />
+        ))}
+      </div>
     </div>
   )
 }

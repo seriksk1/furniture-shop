@@ -23,7 +23,7 @@ export const CustomSlider: React.FC<CustomSliderProps> = ({
   pagination,
   autoplay,
   infinite,
-  arrows,
+  arrows = true,
   autoplaySpeed = 1000,
   slidesToShow = 1,
   nextArrow,
