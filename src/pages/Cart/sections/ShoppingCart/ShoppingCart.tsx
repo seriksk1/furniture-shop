@@ -1,11 +1,11 @@
 import React from "react"
 import classNames from "classnames"
+import styles from "./ShoppingCart.module.pcss"
 import { Link } from "react-router-dom"
 import { ArrowForward } from "../../../../assets/icons"
 import { Button, Typography, TypographySizes, TypographyWeights } from "../../../../components"
 import { appPaths } from "../../../../constants"
 import { CartProduct } from "./CartProduct/CartProduct"
-import styles from "./ShoppingCart.module.pcss"
 
 interface ShoppingCartProps {
   className?: string
