@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./SimilarProducts.module.pcss"
-import { ProductCard } from "../../../../components"
+import { ProductCard, Typography, TypographyColors, TypographySizes } from "../../../../components"
 import { CustomSlider } from "../../../../containers"
 
 import bestProduct1 from "../../../../assets/images/best-products/1.png"
@@ -52,8 +52,16 @@ export const SimilarProducts: React.FC<SimilarProductsProps> = ({ className }) =
   return (
     <div className={classes}>
       <div className={styles.content}>
-        <div className={styles.title}>Similar Products</div>
-        <div className={styles.subtitle}>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
+        <Typography className={styles.title} size={TypographySizes.extraLarge}>
+          Similar Products
+        </Typography>
+        <Typography
+          className={styles.subtitle}
+          size={TypographySizes.medium}
+          color={TypographyColors.gray}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing.
+        </Typography>
       </div>
       <CustomSlider className={styles.slider} slidesToShow={3}>
         {products.map((product, i) => (

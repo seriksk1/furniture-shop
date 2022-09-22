@@ -4,7 +4,7 @@
   align-items: center;
   height: 100%;
   padding-bottom: 40px;
-  border-bottom: 1px solid #bdbdbd;
+  border-bottom: var(--border-gray-1);
 }
 
 .image {
@@ -17,10 +17,7 @@
 .name {
   width: 100%;
   max-width: 330px;
-  font-size: 20px;
-  line-height: 150%;
   margin-right: 20px;
-  color: #333333;
 }
 
 .counter {
@@ -28,10 +25,7 @@
 }
 
 .price {
-  font-size: 20px;
-  line-height: 150%;
   margin-right: 20px;
-  color: #333333;
 }
 
 .close {
@@ -43,7 +37,7 @@
   &:hover {
     .icon {
       path {
-        fill: #ff0000;
+        fill: var(--color-red);
       }
     }
   }

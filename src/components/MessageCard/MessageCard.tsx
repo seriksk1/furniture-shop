@@ -1,6 +1,13 @@
 import React from "react"
 import classNames from "classnames"
-import { Avatar, Rating } from "../UI"
+import {
+  Avatar,
+  Rating,
+  Typography,
+  TypographyColors,
+  TypographySizes,
+  TypographyWeights,
+} from "../UI"
 import { MessageTypes } from "./enums"
 import { AnswerIcon } from "../../assets/icons"
 import styles from "./MessageCard.module.pcss"
@@ -29,21 +36,35 @@ export const MessageCard: React.FC<MessageCardProps> = ({
         <div className={styles.user}>
           <Avatar className={styles.avatar} avatar={avatar} username={username} />
           <div className={styles.column}>
-            <div className={styles.username}>{username}</div>
-            <div className={styles.date}>{date.toDateString()}</div>
+            <Typography className={styles.username} weight={TypographyWeights.medium}>
+              {username}
+            </Typography>
+            <Typography
+              className={styles.date}
+              size={TypographySizes.extraSmall}
+              color={TypographyColors.gray}
+            >
+              {date.toDateString()}
+            </Typography>
           </div>
         </div>
         {messageType === MessageTypes.review && <Rating stars={5} />}
       </div>
       <div className={styles.bottom}>
-        <div className={styles.message}>{text}</div>
+        <Typography className={styles.message}>{text}</Typography>
+
         {messageType === MessageTypes.question && (
           <div className={styles.answers}>
             <AnswerIcon className={styles.icon} />
             {answers && Boolean(answers.length) && (
-              <div className={styles.amount} onClick={onAnswersOpen}>
+              <Typography
+                className={styles.amount}
+                size={TypographySizes.extraSmall}
+                weight={TypographyWeights.medium}
+                onClick={onAnswersOpen}
+              >
                 {answers.length} answers
-              </div>
+              </Typography>
             )}
           </div>
         )}

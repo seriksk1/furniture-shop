@@ -2,16 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
   width: fit-content;
   padding: 0px 22px;
-  border-radius: 4px;
-  box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px rgba(0, 0, 0, 0.14),
-    0px 1px 5px rgba(0, 0, 0, 0.12);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-weight: var(--text-medium);
+  font-size: var(--text-size-s);
+  line-height: var(--text-lh-150);
   text-transform: uppercase;
+  cursor: pointer;
+  border-radius: var(--button-rounded);
+  box-shadow: var(--button-shadow);
 
   span {
     margin-right: 8px;
@@ -27,68 +26,67 @@
   width: 100%;
 }
 
-/* sizes */
+/*------------------SIZES------------------*/
 .small {
-  height: 42px;
+  height: var(--button-size-s);
 }
 
 .medium {
-  height: 48px;
+  height: var(--button-size-m);
 }
 
 .large {
-  height: 60px;
+  height: var(--button-size-l);
 }
 
-/* types */
+/*------------------TYPES------------------*/
 .outlined {
   box-shadow: none;
-  background: transparent;
-  border: 1px solid #333333;
-  color: #333333;
+  background: var(--color-transparent);
+  border: var(--border-dark-1);
+  color: var(--color-dark);
 }
 
 .borderless {
-  background: transparent;
   border: none;
-  color: #333333;
+  background: var(--color-transparent);
+  color: var(--color-dark);
 }
 
 .filled {
   border: none;
 
   &:not(:disabled):hover {
-    background: #ffbf43;
-    color: #333333;
+    background: var(--color-brand);
+    color: var(--color-dark);
 
     svg {
       path {
-        fill: #333333;
+        fill: var(--color-dark);
       }
     }
   }
 }
 
-/* colors */
-
+/*------------------COLORS------------------*/
 .white {
-  color: #333333;
-  background: #ffffff;
+  color: var(--color-dark);
+  background: var(--color-white);
 
   path {
-    fill: #333333;
+    fill: var(--color-dark);
   }
 }
 
 .dark {
-  background: #333333;
-  color: #ffffff;
+  background: var(--color-dark);
+  color: var(--color-white);
 
   path {
-    fill: #ffffff;
+    fill: var(--color-white);
   }
 }
 
 .transparent {
-  background: transparent;
+  background: var(--color-transparent);
 }

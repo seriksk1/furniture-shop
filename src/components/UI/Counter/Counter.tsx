@@ -2,7 +2,7 @@ import React from "react"
 import classNames from "classnames"
 import styles from "./Counter.module.pcss"
 import { MinusIcon, PlusIcon } from "../../../assets/icons"
-import { Button } from "../Button/Button"
+import { Button, ButtonColors, ButtonTypes } from "../Button/Button"
 
 interface CounterProps {
   className?: string
@@ -35,8 +35,8 @@ export const Counter: React.FC<CounterProps> = ({ className, value, setValue }) 
     <div className={classes}>
       <Button
         className={styles.button}
-        color="transparent"
-        type="outlined"
+        color={ButtonColors.transparent}
+        type={ButtonTypes.outlined}
         disabled={value === 1}
         onClick={onMinusClick}
       >
@@ -45,8 +45,8 @@ export const Counter: React.FC<CounterProps> = ({ className, value, setValue }) 
       <input type="number" className={styles.input} value={value} onChange={onInputChange} />
       <Button
         className={styles.button}
-        color="transparent"
-        type="outlined"
+        color={ButtonColors.transparent}
+        type={ButtonTypes.outlined}
         disabled={value === 100}
         onClick={onPlusClick}
       >

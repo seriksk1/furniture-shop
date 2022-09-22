@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./SubscribeUs.module.pcss"
-import { Button } from "../../../../components"
+import { Button, Typography, TypographyColors, TypographySizes } from "../../../../components"
 import { useInput } from "../../../../hooks"
 
 interface SubscribeUsProps {
@@ -15,10 +15,16 @@ export const SubscribeUs: React.FC<SubscribeUsProps> = ({ className }) => {
   return (
     <div className={classes}>
       <div className={styles.info}>
-        <div className={styles.title}>Get in Touch</div>
-        <div className={styles.description}>
+        <Typography className={styles.title} size={TypographySizes.extraLarge}>
+          Get in Touch
+        </Typography>
+        <Typography
+          className={styles.description}
+          size={TypographySizes.medium}
+          color={TypographyColors.gray}
+        >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        </div>
+        </Typography>
       </div>
       <div className={styles.form}>
         <div className={styles.wrap}>
@@ -28,9 +34,11 @@ export const SubscribeUs: React.FC<SubscribeUsProps> = ({ className }) => {
             placeholder="Email..."
             onChange={onChange}
           />
-          <div className={styles.label}>EMAIL ADDRESS</div>
+          <Typography className={styles.label} size={TypographySizes.extraSmall}>
+            EMAIL ADDRESS
+          </Typography>
         </div>
-        <Button size="small">Subscribe Us</Button>
+        <Button>Subscribe Us</Button>
       </div>
     </div>
   )

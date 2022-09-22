@@ -1,7 +1,15 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./DiscountBanner.module.pcss"
-import { Button, Tip } from "../../../../components"
+import {
+  Button,
+  Tip,
+  TipTypes,
+  Typography,
+  TypographyColors,
+  TypographySizes,
+  TypographyWeights,
+} from "../../../../components"
 
 import saleImage from "../../../../assets/images/sale-image.png"
 import brandLogo from "../../../../assets/images/sale-brand.png"
@@ -18,15 +26,32 @@ export const DiscountBanner: React.FC<DiscountBannerProps> = ({ className }) => 
       <img className={styles.image} src={saleImage} alt="sale" />
       <img className={styles.brand} src={brandLogo} alt="brand" />
       <div className={styles.discount}>
-        <div className={styles.time}>For a limited time</div>
+        <Typography
+          className={styles.time}
+          size={TypographySizes.medium}
+          weight={TypographyWeights.medium}
+          color={TypographyColors.white}
+        >
+          For a limited time
+        </Typography>
         <div className={styles.content}>
-          <div className={styles.title}>Save up to</div>
-          <div className={styles.value}>30%</div>
-          <div className={styles.subtitle}>OFF</div>
-          <Button size="small">Shop Now</Button>
+          <Typography className={styles.title} size={TypographySizes.medium}>
+            Save up to
+          </Typography>
+          <Typography className={styles.value} weight={TypographyWeights.extrabold}>
+            30%
+          </Typography>
+          <Typography
+            className={styles.subtitle}
+            size={TypographySizes.huge}
+            weight={TypographyWeights.medium}
+          >
+            OFF
+          </Typography>
+          <Button>Shop Now</Button>
         </div>
       </div>
-      <Tip type="sale" />
+      <Tip type={TipTypes.sale} />
     </div>
   )
 }

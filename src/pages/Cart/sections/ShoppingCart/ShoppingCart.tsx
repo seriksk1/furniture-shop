@@ -2,7 +2,7 @@ import React from "react"
 import classNames from "classnames"
 import { Link } from "react-router-dom"
 import { ArrowForward } from "../../../../assets/icons"
-import { Button } from "../../../../components"
+import { Button, Typography, TypographySizes, TypographyWeights } from "../../../../components"
 import { appPaths } from "../../../../constants"
 import { CartProduct } from "./CartProduct/CartProduct"
 import styles from "./ShoppingCart.module.pcss"
@@ -17,23 +17,31 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className, toNextSte
 
   return (
     <div className={classes}>
-      <div className={styles.title}>Shopping Cart</div>
+      <Typography className={styles.title} size={TypographySizes.extraLarge}>
+        Shopping Cart
+      </Typography>
       <div className={styles.list}>
         <CartProduct className={styles.product} />
         <CartProduct className={styles.product} />
       </div>
       <div className={styles.bottom}>
-        <Link className={styles.back} to={appPaths.product}>
-          <ArrowForward className={styles.icon} />
-          <span>Back to shop</span>
-        </Link>
+        <Typography className={styles.back} size={TypographySizes.medium}>
+          <Link to={appPaths.product}>
+            <ArrowForward className={styles.icon} />
+            <span>Back to shop</span>
+          </Link>
+        </Typography>
         <div className={styles.total}>
-          <div className={styles.label}>Total Price:</div>
-          <div className={styles.price}>$420.00</div>
+          <Typography className={styles.label} size={TypographySizes.medium}>
+            Total Price:
+          </Typography>
+          <Typography size={TypographySizes.large} weight={TypographyWeights.medium}>
+            $420.00
+          </Typography>
         </div>
       </div>
       <div className={styles.checkout}>
-        <Button size="small" onClick={toNextStep}>
+        <Button onClick={toNextStep}>
           <span>Checkout</span>
           <ArrowForward />
         </Button>

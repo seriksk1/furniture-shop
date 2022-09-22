@@ -2,7 +2,7 @@ import React from "react"
 import classNames from "classnames"
 import styles from "./Categories.module.pcss"
 import { CustomSlider } from "../../../../containers"
-import { CategoryCard } from "../../../../components"
+import { CategoryCard, Typography, TypographyColors, TypographySizes } from "../../../../components"
 
 import collection1 from "../../../../assets/images/collections/1.png"
 import collection2 from "../../../../assets/images/collections/2.png"
@@ -45,10 +45,16 @@ export const Categories: React.FC<CategoriesProps> = ({ className }) => {
 
   return (
     <div className={classes}>
-      <div className={styles.title}>Choose Categories</div>
-      <div className={styles.subtitle}>
+      <Typography className={styles.title} size={TypographySizes.extraLarge}>
+        Choose Categories
+      </Typography>
+      <Typography
+        className={styles.subtitle}
+        size={TypographySizes.medium}
+        color={TypographyColors.gray}
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </div>
+      </Typography>
       <CustomSlider className={styles.slider} slidesToShow={3}>
         {categoryList.map((category, i) => (
           <CategoryCard key={i} category={category} />

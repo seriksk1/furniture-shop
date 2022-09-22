@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  background: #333333;
+  background: var(--color-dark);
 }
 
 .content {
@@ -25,20 +25,13 @@
 }
 
 .title {
-  font-weight: 500;
-  font-size: 48px;
-  line-height: 133%;
   margin-bottom: 20px;
   z-index: 2;
-  color: #ffffff;
 }
 
 .subtitle {
-  font-size: 24px;
-  line-height: 133%;
   margin-bottom: 64px;
   z-index: 2;
-  color: #ffffff;
 }
 
 .button {
@@ -63,13 +56,13 @@
 .black {
   width: 71%;
   height: 100%;
-  background: #333333;
+  background: var(--color-dark);
 }
 
 .yellow {
   width: 29%;
   height: 100%;
-  background: #ffbf43;
+  background: var(--color-brand);
 }
 
 .decoration {
@@ -85,19 +78,19 @@
   }
 
   .subtitle {
-    font-size: 22px;
+    font-size: var(--text-size-m);
     margin-bottom: 48px;
   }
 }
 
 @media screen and (max-width: 1280px) {
   .title {
-    font-size: 36px;
+    font-size: var(--text-size-xl);
     margin-bottom: 16px;
   }
 
   .subtitle {
-    font-size: 18px;
+    font-size: var(--text-size-s);
     margin-bottom: 24px;
   }
 }

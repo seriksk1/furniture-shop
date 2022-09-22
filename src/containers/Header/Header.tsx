@@ -6,6 +6,7 @@ import {
   SearchOutlined,
   ShoppingCartFilled,
 } from "../../assets/icons"
+import { Typography, TypographySizes } from "../../components"
 import { appPaths } from "../../constants"
 import styles from "./Header.module.pcss"
 
@@ -30,9 +31,9 @@ export const Header: React.FC = () => {
       <LogoIcon />
       <div className={styles.navbar}>
         {navigationLinks.map(({ name, path }) => (
-          <Link to={path} className={styles.link} key={name}>
-            {name}
-          </Link>
+          <Typography key={name} className={styles.link} size={TypographySizes.medium}>
+            <Link to={path}>{name}</Link>
+          </Typography>
         ))}
       </div>
       <div className={styles.tools}>

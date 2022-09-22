@@ -2,6 +2,7 @@ import React from "react"
 import classNames from "classnames"
 import { ArrowDropdown } from "../../../assets/icons/ArrowDropdown"
 import styles from "./Dropdown.module.pcss"
+import { Typography } from "../Typography/Typography"
 
 interface DropdownProps {
   className?: string
@@ -34,16 +35,16 @@ export const Dropdown: React.FC<DropdownProps> = ({ className, list }) => {
     }
 
     return (
-      <div key={item} className={styles.item} onClick={handleChange}>
+      <Typography key={item} className={styles.item} onClick={handleChange}>
         {item}
-      </div>
+      </Typography>
     )
   }
 
   return (
     <div className={classes} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <div className={styles.current}>
-        <span>{currentItem}</span>
+        <Typography>{currentItem}</Typography>
         <ArrowDropdown className={styles.arrow} />
       </div>
       {open && <div className={styles.list}>{list.map((item, i) => renderItem(item))}</div>}

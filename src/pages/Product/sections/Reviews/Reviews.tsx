@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./Reviews.module.pcss"
-import { Button, ButtonGroup, Dropdown } from "../../../../components"
+import { Button, ButtonGroup, ButtonTypes, Dropdown, Typography } from "../../../../components"
 import { PlusIcon } from "../../../../assets/icons"
 import { MessageContainer } from "../../../../containers"
 import { questions, reviews } from "../../../../mocks"
@@ -40,16 +40,14 @@ export const Reviews: React.FC<ReviewsProps> = ({ className }) => {
         <Button
           className={messagesType === MessageTypes.review ? styles.selected : styles.notSelected}
           onClick={onReviewsTypeSet}
-          type="borderless"
-          size="small"
+          type={ButtonTypes.borderless}
         >
           Reviews ({reviews.length})
         </Button>
         <Button
           className={messagesType === MessageTypes.question ? styles.selected : styles.notSelected}
           onClick={onQuestionsTypeSet}
-          type="borderless"
-          size="small"
+          type={ButtonTypes.borderless}
         >
           Q&A ({questions.length})
         </Button>
@@ -63,7 +61,7 @@ export const Reviews: React.FC<ReviewsProps> = ({ className }) => {
       </div>
 
       <div className={styles.sort}>
-        <div className={styles.label}>Sort by:</div>
+        <Typography className={styles.label}>Sort by:</Typography>
         <Dropdown className={styles.dropdown} list={sortTypes} />
       </div>
 

@@ -1,11 +1,19 @@
 import classNames from "classnames"
 import React from "react"
-import { Rating, Tip } from "../UI"
+import {
+  Rating,
+  Tip,
+  TipPositionX,
+  TipTypes,
+  Typography,
+  TypographySizes,
+  TypographyWeights,
+} from "../UI"
 import styles from "./ProductCard.module.pcss"
 
 interface ProductCardProps {
   product: Product
-  tipPositionX?: "left" | "right"
+  tipPositionX?: TipPositionX
   className?: string
 }
 
@@ -18,13 +26,19 @@ export const ProductCard: React.FC<ProductCardProps> = ({ className, product, ti
     <div className={classes}>
       <img className={styles.image} src={image} />
       <Rating className={styles.stars} stars={stars} />
-      <div className={styles.name}>{name}</div>
-      <div className={styles.price}>
+      <Typography className={styles.name} size={TypographySizes.medium}>
+        {name}
+      </Typography>
+      <Typography
+        className={styles.price}
+        size={TypographySizes.medium}
+        weight={TypographyWeights.semibold}
+      >
         {discountPrice ? <span className={styles.priceBefore}>{price}</span> : price}
         {discountPrice && <span className={styles.priceAfter}>{discountPrice}</span>}
-      </div>
-      {discountPrice && <Tip type="sale" positionX={tipPositionX} />}
-      {isNew && <Tip type="new" positionX={tipPositionX} />}
+      </Typography>
+      {discountPrice && <Tip type={TipTypes.sale} positionX={tipPositionX} />}
+      {isNew && <Tip type={TipTypes.new} positionX={tipPositionX} />}
     </div>
   )
 }

@@ -10,6 +10,7 @@ import {
   YoutubeIcon,
 } from "../../assets/icons"
 import styles from "./Footer.module.pcss"
+import { Typography, TypographySizes, TypographyWeights } from "../../components"
 
 export const Footer: React.FC = () => {
   const classes = classNames(styles.container)
@@ -19,50 +20,80 @@ export const Footer: React.FC = () => {
       <div className={styles.wrap}>
         <div className={styles.top}>
           <div className={styles.section}>
-            <div className={styles.title}>Store Information</div>
-            <div className={styles.text}>
+            <Typography
+              className={styles.title}
+              size={TypographySizes.medium}
+              weight={TypographyWeights.medium}
+            >
+              Store Information
+            </Typography>
+            <Typography className={styles.text}>
               <MapPinIcon className={styles.icon} />
               <span>625 Mante Avenue Suite 512 Borermouth, CO 81655</span>
-            </div>
-            <div className={styles.text}>
+            </Typography>
+            <Typography className={styles.text}>
               <PhoneIcon className={styles.icon} />
               <span>+1.267.669.5513</span>
-            </div>
-            <div className={styles.text}>
+            </Typography>
+            <Typography className={styles.text}>
               <MailIcon className={styles.icon} />
               <span>furniture@gmail.com</span>
-            </div>
+            </Typography>
           </div>
 
           <div className={styles.section}>
-            <div className={styles.title}>About us</div>
-            <div className={styles.link}>Support Center</div>
-            <div className={styles.link}>Customer Support</div>
-            <div className={styles.link}>About Us</div>
-            <div className={styles.link}>Copyright</div>
+            <Typography
+              className={styles.title}
+              size={TypographySizes.medium}
+              weight={TypographyWeights.medium}
+            >
+              About us
+            </Typography>
+            <Typography className={styles.link}>Support Center</Typography>
+            <Typography className={styles.link}>Customer Support</Typography>
+            <Typography className={styles.link}>About Us</Typography>
+            <Typography className={styles.link}>Copyright</Typography>
           </div>
 
           <div className={styles.section}>
-            <div className={styles.title}>Our information</div>
-            <div className={styles.link}>Return Policy</div>
-            <div className={styles.link}>Privacy Policy</div>
-            <div className={styles.link}>Site Map</div>
-            <div className={styles.link}>Store Hours</div>
+            <Typography
+              className={styles.title}
+              size={TypographySizes.medium}
+              weight={TypographyWeights.medium}
+            >
+              Our information
+            </Typography>
+            <Typography className={styles.link}>Return Policy</Typography>
+            <Typography className={styles.link}>Privacy Policy</Typography>
+            <Typography className={styles.link}>Site Map</Typography>
+            <Typography className={styles.link}>Store Hours</Typography>
           </div>
 
           <div className={styles.section}>
-            <div className={styles.title}>My Account</div>
-            <div className={styles.link}>Social media directories</div>
-            <div className={styles.link}>Images & B-roll</div>
-            <div className={styles.link}>Premissions</div>
-            <div className={styles.link}>Speaker requests</div>
+            <Typography
+              className={styles.title}
+              size={TypographySizes.medium}
+              weight={TypographyWeights.medium}
+            >
+              My Account
+            </Typography>
+            <Typography className={styles.link}>Social media directories</Typography>
+            <Typography className={styles.link}>Images & B-roll</Typography>
+            <Typography className={styles.link}>Premissions</Typography>
+            <Typography className={styles.link}>Speaker requests</Typography>
           </div>
 
           <div className={styles.section}>
-            <div className={styles.title}>Policy</div>
-            <div className={styles.link}>Application security</div>
-            <div className={styles.link}>Software principles</div>
-            <div className={styles.link}>Unwanted software policy</div>
+            <Typography
+              className={styles.title}
+              size={TypographySizes.medium}
+              weight={TypographyWeights.medium}
+            >
+              Policy
+            </Typography>
+            <Typography className={styles.link}>Application security</Typography>
+            <Typography className={styles.link}>Software principles</Typography>
+            <Typography className={styles.link}>Unwanted software policy</Typography>
           </div>
         </div>
         <div className={styles.bottom}>
@@ -73,11 +104,11 @@ export const Footer: React.FC = () => {
             <YoutubeIcon className={styles.social} />
           </div>
           <div className={styles.documents}>
-            <div className={styles.document}>Help</div>
-            <div className={styles.document}>Privacy</div>
-            <div className={styles.document}>Terms</div>
+            <Typography className={styles.document}>Help</Typography>
+            <Typography className={styles.document}>Privacy</Typography>
+            <Typography className={styles.document}>Terms</Typography>
           </div>
-          <div className={styles.text}>Copyright © 2022 Furniture Corporation</div>
+          <Typography className={styles.text}>Copyright © 2022 Furniture Corporation</Typography>
         </div>
       </div>
     </footer>

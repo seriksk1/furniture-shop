@@ -2,7 +2,13 @@ import React from "react"
 import classNames from "classnames"
 import styles from "./BestProducts.module.pcss"
 import { ArrowForward } from "../../../../assets/icons"
-import { Button, ProductCard } from "../../../../components"
+import {
+  Button,
+  ProductCard,
+  Typography,
+  TypographyColors,
+  TypographySizes,
+} from "../../../../components"
 import { CustomSlider } from "../../../../containers"
 
 import bestProduct1 from "../../../../assets/images/best-products/1.png"
@@ -56,9 +62,17 @@ export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
   return (
     <div className={classes}>
       <div className={styles.content}>
-        <div className={styles.title}>Best Selling Product</div>
-        <div className={styles.subtitle}>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-        <Button size="small">
+        <Typography className={styles.title} size={TypographySizes.extraLarge}>
+          Best Selling Product
+        </Typography>
+        <Typography
+          className={styles.subtitle}
+          size={TypographySizes.medium}
+          color={TypographyColors.gray}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing.
+        </Typography>
+        <Button>
           <span>See all</span>
           <ArrowForward />
         </Button>

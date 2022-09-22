@@ -1,7 +1,15 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./Hero.module.pcss"
-import { Button } from "../../../../components"
+import {
+  Button,
+  ButtonColors,
+  Typography,
+  TypographyColors,
+  TypographyLineHeights,
+  TypographySizes,
+  TypographyWeights,
+} from "../../../../components"
 import { ArrowForward } from "../../../../assets/icons"
 
 const heroImage = require("../../../../assets/images/hero-image.png")
@@ -18,11 +26,24 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
     <div className={classes}>
       <div className={styles.content}>
         <div className={styles.left}>
-          <div className={styles.title}>Best Designs of Furniture Collection 2022</div>
-          <div className={styles.subtitle}>
+          <Typography
+            className={styles.title}
+            size={TypographySizes.huge}
+            lineHeight={TypographyLineHeights.small}
+            weight={TypographyWeights.medium}
+            color={TypographyColors.white}
+          >
+            Best Designs of Furniture Collection 2022
+          </Typography>
+          <Typography
+            className={styles.subtitle}
+            size={TypographySizes.large}
+            lineHeight={TypographyLineHeights.small}
+            color={TypographyColors.white}
+          >
             We have 2000+ Review and our customers trust on our Furniture and Quality products
-          </div>
-          <Button className={styles.button} color="white" size="small">
+          </Typography>
+          <Button className={styles.button} color={ButtonColors.white}>
             <span>Buy now</span>
             <ArrowForward />
           </Button>

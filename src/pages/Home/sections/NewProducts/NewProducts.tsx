@@ -1,7 +1,13 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./NewProducts.module.pcss"
-import { Button, ProductCard } from "../../../../components"
+import {
+  Button,
+  ProductCard,
+  Typography,
+  TypographyColors,
+  TypographySizes,
+} from "../../../../components"
 import { ArrowForward } from "../../../../assets/icons"
 
 import newProduct1 from "../../../../assets/images/new-products/1.png"
@@ -57,16 +63,22 @@ export const NewProducts: React.FC<NewProductsProps> = ({ className }) => {
 
   return (
     <div className={classes}>
-      <div className={styles.title}>New Products</div>
-      <div className={styles.subtitle}>
+      <Typography className={styles.title} size={TypographySizes.large}>
+        New Products
+      </Typography>
+      <Typography
+        className={styles.subtitle}
+        size={TypographySizes.medium}
+        color={TypographyColors.gray}
+      >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </div>
+      </Typography>
       <div className={styles.products}>
         {products.map((product, i) => (
           <ProductCard key={i} product={product} className={styles.card} />
         ))}
       </div>
-      <Button className={styles.button} size="small">
+      <Button className={styles.button}>
         <span>See all</span>
         <ArrowForward />
       </Button>

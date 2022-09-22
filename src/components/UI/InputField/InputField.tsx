@@ -2,6 +2,7 @@ import React from "react"
 import classNames from "classnames"
 import { UseFormRegisterReturn } from "react-hook-form"
 import styles from "./InputField.module.pcss"
+import { Typography, TypographyColors, TypographySizes } from "../Typography/Typography"
 
 interface InputFIeldProps {
   className?: string
@@ -25,7 +26,15 @@ export const InputField: React.FC<InputFIeldProps> = ({
   return (
     <div className={className}>
       <input className={classes} type={type} placeholder={placeholder} {...register} />
-      {error && <div className={styles.error}>{error}</div>}
+      {error && (
+        <Typography
+          className={styles.error}
+          size={TypographySizes.extraSmall}
+          color={TypographyColors.red}
+        >
+          {error}
+        </Typography>
+      )}
     </div>
   )
 }
