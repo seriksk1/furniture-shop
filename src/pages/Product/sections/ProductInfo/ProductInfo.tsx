@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./ProductInfo.module.pcss"
-import productImage from "../../../../assets/images/auth-bg-1.png"
+import productImage from "../../../../assets/images/product/1.png"
 import {
   Accordion,
   Button,

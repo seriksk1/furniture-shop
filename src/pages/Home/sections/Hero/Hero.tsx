@@ -12,8 +12,8 @@ import {
 } from "../../../../components"
 import { ArrowForward } from "../../../../assets/icons"
 
-const heroImage = require("../../../../assets/images/hero-image.png")
-const heroDecoration = require("../../../../assets/images/hero-decoration.png")
+const heroImage = require("../../../../assets/images/landing/hero-image.png")
+const heroDecoration = require("../../../../assets/images/landing/hero-decoration.png")
 
 interface HeroProps {
   className?: string

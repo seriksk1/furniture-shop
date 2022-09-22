@@ -4,6 +4,7 @@ import styles from "./Categories.module.pcss"
 import { CustomSlider } from "../../../../containers"
 import { CategoryCard, Typography, TypographyColors, TypographySizes } from "../../../../components"
 import { categories } from "../../../../mocks"
+import { ChevronLeft } from "../../../../assets/icons"
 
 interface CategoriesProps {
   className?: string
@@ -24,7 +25,12 @@ export const Categories: React.FC<CategoriesProps> = ({ className }) => {
       >
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </Typography>
-      <CustomSlider className={styles.slider} slidesToShow={3}>
+      <CustomSlider
+        className={styles.slider}
+        slidesToShow={3}
+        nextArrow={<ChevronLeft />}
+        prevArrow={<ChevronLeft />}
+      >
         {categories.map((category, i) => (
           <CategoryCard key={i} category={category} />
         ))}

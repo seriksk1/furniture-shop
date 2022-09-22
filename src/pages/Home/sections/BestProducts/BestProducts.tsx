@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./BestProducts.module.pcss"
-import { ArrowForward } from "../../../../assets/icons"
+import { ArrowForward, ChevronLeft } from "../../../../assets/icons"
 import {
   Button,
   ProductCard,
@@ -37,7 +37,12 @@ export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
           <ArrowForward />
         </Button>
       </div>
-      <CustomSlider className={styles.slider} slidesToShow={3}>
+      <CustomSlider
+        className={styles.slider}
+        slidesToShow={3}
+        nextArrow={<ChevronLeft />}
+        prevArrow={<ChevronLeft />}
+      >
         {bestProducts.map((product, i) => (
           <ProductCard key={i} product={product} />
         ))}

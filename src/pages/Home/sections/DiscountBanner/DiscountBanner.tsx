@@ -11,8 +11,8 @@ import {
   TypographyWeights,
 } from "../../../../components"
 
-import saleImage from "../../../../assets/images/sale-image.png"
-import brandLogo from "../../../../assets/images/sale-brand.png"
+import saleImage from "../../../../assets/images/landing/sale-image.png"
+import brandLogo from "../../../../assets/images/landing/sale-brand.png"
 
 interface DiscountBannerProps {
   className?: string

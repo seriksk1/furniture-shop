@@ -17,6 +17,56 @@ a {
   }
 }
 
+.slick-list {
+  height: 100%;
+}
+
+.slick-track {
+  height: 100%;
+}
+
+.slick-slide {
+  height: 100%;
+
+  div {
+    height: 100%;
+  }
+}
+
+.slick-dots {
+  bottom: 30px;
+
+  ul {
+    li {
+      width: fit-content;
+      height: fit-content;
+      margin: 0;
+
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      button {
+        width: 15px;
+        height: 15px;
+        background: var(--color-gray);
+        border-radius: 50%;
+        margin: 0;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      &.slick-active {
+        button {
+          background: var(--color-white);
+        }
+      }
+    }
+  }
+}
+
 .slick-arrow {
   box-sizing: content-box;
   border: var(--border-gray-1);

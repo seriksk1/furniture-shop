@@ -8,6 +8,7 @@ import styles from "./CustomSlider.module.pcss"
 
 interface CustomSliderProps extends React.PropsWithChildren {
   pagination?: boolean
+  arrows?: boolean
   autoplay?: boolean
   infinite?: boolean
   autoplaySpeed?: number
@@ -22,16 +23,18 @@ export const CustomSlider: React.FC<CustomSliderProps> = ({
   pagination,
   autoplay,
   infinite,
+  arrows,
   autoplaySpeed = 1000,
   slidesToShow = 1,
-  nextArrow = <ChevronLeft />,
-  prevArrow = <ChevronLeft />,
+  nextArrow,
+  prevArrow,
   className,
 }) => {
   const classes = classNames(styles.slider, className)
 
   const settings: Settings = {
     dots: pagination,
+    arrows: arrows,
     autoplay: autoplay,
     infinite: infinite,
     speed: 500,
