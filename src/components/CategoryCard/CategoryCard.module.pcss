@@ -58,7 +58,16 @@
     }
 
     .link {
+      white-space: nowrap;
       font-size: var(--text-size-xs);
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .card {
+    .info {
+      min-width: unset;
     }
   }
 }

@@ -95,18 +95,11 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
-}
-
 @media screen and (max-width: 834px) {
   .container {
     .content {
-      .title {
-        font-size: var(--text-size-m);
-      }
-
       .subtitle {
-        font-size: var(--text-size-s);
+        max-width: 330px;
       }
     }
   }
@@ -125,10 +118,24 @@
 }
 
 @media screen and (max-width: 640px) {
-}
+  .container {
+    .slider {
+      display: block;
+      width: 100%;
+      margin-bottom: 36px;
 
-@media screen and (max-width: 480px) {
-}
+      .product {
+        margin-right: 10px;
 
-@media screen and (max-width: 360px) {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .products {
+      display: none;
+    }
+  }
 }

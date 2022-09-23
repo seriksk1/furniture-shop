@@ -19,7 +19,7 @@ interface BestProductsProps {
 
 export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
-  const isMobileDevice = useMobileDevice()
+  const isMobileDevice = useMobileDevice(640)
 
   return (
     <div className={classes}>
@@ -43,12 +43,13 @@ export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
 
       <CustomSlider
         className={styles.slider}
-        slidesToShow={3}
+        slidesToShow={isMobileDevice ? 2.1 : 3}
+        arrows={isMobileDevice ? false : true}
         nextArrow={<ChevronLeft />}
         prevArrow={<ChevronLeft />}
       >
         {bestProducts.map((product, i) => (
-          <ProductCard key={i} product={product} />
+          <ProductCard key={i} className={styles.product} product={product} />
         ))}
       </CustomSlider>
 

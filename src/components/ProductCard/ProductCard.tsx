@@ -1,5 +1,6 @@
-import classNames from "classnames"
 import React from "react"
+import classNames from "classnames"
+import styles from "./ProductCard.module.pcss"
 import {
   Rating,
   Tip,
@@ -9,7 +10,6 @@ import {
   TypographySizes,
   TypographyWeights,
 } from "../UI"
-import styles from "./ProductCard.module.pcss"
 
 interface ProductCardProps {
   product: Product

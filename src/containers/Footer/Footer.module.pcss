@@ -119,12 +119,10 @@
   .container {
     .section {
       .title {
-        font-size: var(--text-size-s);
         margin-bottom: 24px;
       }
 
       .link {
-        font-size: var(--text-size-xs);
         margin-bottom: 16px;
       }
     }
@@ -194,10 +192,49 @@
 @media screen and (max-width: 640px) {
   .container {
     padding: 0 20px;
+
+    .section {
+      &:nth-child(3) {
+        display: none;
+      }
+    }
+
+    .bottom {
+      padding: 20px 0 15px;
+
+      .wrap {
+        margin-bottom: 0;
+
+        .logo {
+          margin-right: 0;
+        }
+
+        .socials {
+          &:not(:last-child) {
+            margin-right: 16px;
+          }
+        }
+
+        .documents {
+          display: none;
+        }
+      }
+
+      .text {
+        display: none;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 480px) {
+  .container {
+    .section {
+      &:nth-child(2) {
+        display: none;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 360px) {

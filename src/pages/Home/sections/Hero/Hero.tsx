@@ -33,7 +33,8 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
             weight={TypographyWeights.medium}
             color={TypographyColors.white}
           >
-            Best Designs of Furniture Collection 2022
+            <span>Best Designs of Furniture Collection 2022</span>
+            <span className={styles.mobile}>Furniture Collection 2022</span>
           </Typography>
           <Typography
             className={styles.subtitle}
@@ -41,7 +42,10 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
             lineHeight={TypographyLineHeights.small}
             color={TypographyColors.white}
           >
-            We have 2000+ Review and our customers trust on our Furniture and Quality products
+            <span>
+              We have 2000+ Review and our customers trust on our Furniture and Quality products
+            </span>
+            <span className={styles.mobile}>We have 2000+ Furniture and Quality products</span>
           </Typography>
           <Button className={styles.button} color={ButtonColors.white}>
             <span>Buy now</span>

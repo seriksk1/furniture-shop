@@ -26,11 +26,19 @@
   .title {
     margin-bottom: 20px;
     z-index: 2;
+
+    span.mobile {
+      display: none;
+    }
   }
 
   .subtitle {
     margin-bottom: 64px;
     z-index: 2;
+
+    span.mobile {
+      display: none;
+    }
   }
 
   .button {
@@ -140,6 +148,40 @@
 
 @media screen and (max-width: 640px) {
   .hero {
+    height: 43vw;
+
+    .content {
+      padding-left: 15px;
+
+      img {
+        height: 80%;
+      }
+    }
+
+    .left {
+      max-width: 48%;
+      margin-right: 10px;
+    }
+
+    .title {
+      span {
+        display: none;
+
+        &.mobile {
+          display: inline;
+        }
+      }
+    }
+
+    .subtitle {
+      span {
+        display: none;
+
+        &.mobile {
+          display: inline;
+        }
+      }
+    }
   }
 }
 

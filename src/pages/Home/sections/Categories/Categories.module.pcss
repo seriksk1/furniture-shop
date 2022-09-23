@@ -62,25 +62,36 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
-}
-
 @media screen and (max-width: 834px) {
   .container {
-    .title {
-      font-size: var(--text-size-m);
-    }
-
     .subtitle {
-      font-size: var(--text-size-s);
+      max-width: 330px;
     }
   }
 }
 
-@media screen and (max-width: 768px) {
-}
-
 @media screen and (max-width: 640px) {
+  .container {
+    .slider {
+      display: block;
+      width: 100%;
+
+      .category {
+        width: unset;
+        height: 43vw;
+        margin-right: 10px;
+
+        img {
+          height: 100%;
+          display: flex;
+        }
+      }
+    }
+
+    .categories {
+      display: none;
+    }
+  }
 }
 
 @media screen and (max-width: 480px) {

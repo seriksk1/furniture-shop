@@ -5,6 +5,7 @@ import { CustomSlider } from "../../../../containers"
 import { CategoryCard, Typography, TypographyColors, TypographySizes } from "../../../../components"
 import { categories } from "../../../../mocks"
 import { ChevronLeft } from "../../../../assets/icons"
+import { useMobileDevice } from "../../../../hooks"
 
 interface CategoriesProps {
   className?: string
@@ -12,6 +13,7 @@ interface CategoriesProps {
 
 export const Categories: React.FC<CategoriesProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
+  const isMobileDevice = useMobileDevice(640)
 
   return (
     <div className={classes}>
@@ -28,12 +30,13 @@ export const Categories: React.FC<CategoriesProps> = ({ className }) => {
 
       <CustomSlider
         className={styles.slider}
-        slidesToShow={3}
+        slidesToShow={isMobileDevice ? 1.05 : 3}
+        arrows={isMobileDevice ? false : true}
         nextArrow={<ChevronLeft />}
         prevArrow={<ChevronLeft />}
       >
         {categories.map((category, i) => (
-          <CategoryCard key={i} category={category} />
+          <CategoryCard key={i} className={styles.category} category={category} />
         ))}
       </CustomSlider>
 
