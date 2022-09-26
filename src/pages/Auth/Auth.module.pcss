@@ -1,4 +1,5 @@
 .page {
+  position: relative;
   display: flex;
   height: 100vh;
 }
@@ -7,12 +8,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
+  position: relative;
+  width: 50%;
   height: 100%;
   flex: 1 1;
 
   &:first-child {
     padding: 30vh 25px 25px;
+  }
+}
+
+.logo {
+  position: absolute;
+  top: 25px;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+
+  img {
+    width: inherit !important;
   }
 }
 
@@ -22,7 +38,40 @@
   object-fit: cover;
 }
 
-.logo {
-  position: absolute;
-  top: 25px;
+@media screen and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    flex: unset;
+
+    &:first-child {
+      padding: 0 24px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &:last-child {
+      position: absolute;
+      z-index: 10;
+    }
+  }
+
+  .logo {
+    z-index: 20;
+  }
+
+  .form {
+    z-index: 20;
+    width: 100%;
+    max-width: 485px;
+    padding: 40px 50px;
+    border-radius: 4px;
+    background: var(--color-white);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .form {
+    max-width: unset;
+    padding: 36px 24px;
+  }
 }

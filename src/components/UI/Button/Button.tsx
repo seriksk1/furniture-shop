@@ -1,11 +1,14 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./Button.module.pcss"
+import { ButtonColors, ButtonSizes, ButtonTypes } from "./enums"
+
+export * from "./enums"
 
 export interface ButtonProps extends React.PropsWithChildren {
-  size?: "small" | "medium" | "large"
-  type?: "borderless" | "outlined" | "filled"
-  color?: "white" | "dark" | "transparent"
+  size?: ButtonSizes
+  type?: ButtonTypes
+  color?: ButtonColors
   submit?: boolean
   fullWidth?: boolean
   disabled?: boolean
@@ -14,9 +17,9 @@ export interface ButtonProps extends React.PropsWithChildren {
 }
 
 export const Button: React.FC<ButtonProps> = ({
-  size = "medium",
-  type = "filled",
-  color = "dark",
+  size = ButtonSizes.small,
+  type = ButtonTypes.filled,
+  color = ButtonColors.dark,
   submit,
   fullWidth,
   className,

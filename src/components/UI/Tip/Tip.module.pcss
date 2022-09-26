@@ -6,19 +6,16 @@
   top: 20px;
   min-width: 70px;
   height: 30px;
-  font-size: 16px;
-  line-height: 24px;
   text-align: center;
   text-transform: capitalize;
-  color: #ffffff;
 }
 
 .sale {
-  background: #ff0000;
+  background: var(--color-red);
 }
 
 .new {
-  background: #93b36e;
+  background: var(--color-green);
 }
 
 .left {
@@ -31,4 +28,19 @@
   right: 0;
   padding: 0 0 0 12px;
   justify-content: flex-start;
+}
+
+@media screen and (max-width: 834px) {
+  .tip {
+    min-width: 52px;
+    height: 20px;
+  }
+
+  .left {
+    padding: 0 7px 0 0;
+  }
+
+  .right {
+    padding: 0 0 0 7px;
+  }
 }

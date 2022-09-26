@@ -7,12 +7,18 @@
   }
 }
 
-.selected {
-  border-bottom: 1px solid #333333;
-  color: #333333;
-}
+.selection {
+  button {
+    font-size: var(--text-size-static-m);
+  }
 
-.notSelected {
-  border-bottom: 1px solid transparent;
-  color: #bdbdbd;
+  .selected {
+    border-bottom: var(--border-dark-1);
+    color: var(--color-dark);
+  }
+
+  .notSelected {
+    border-bottom: var(--border-transparent-1);
+    color: var(--color-gray);
+  }
 }

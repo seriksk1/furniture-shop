@@ -1,28 +1,141 @@
 .container {
   display: flex;
   justify-content: space-between;
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      margin-bottom: 16px;
+    }
+
+    .subtitle {
+      margin-bottom: 24px;
+      max-width: 300px;
+    }
+
+    .button {
+      display: flex;
+    }
+  }
+
+  .slider {
+    width: 840px;
+  }
+
+  .products {
+    display: none;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 36px;
+
+    .product {
+      flex: 1;
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  .button {
+    display: none;
+  }
 }
 
-.content {
-  display: flex;
-  flex-direction: column;
+@media screen and (max-width: 1280px) {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .content {
+      align-items: center;
+
+      .title {
+        margin-bottom: 5px;
+        text-align: center;
+      }
+
+      .subtitle {
+        margin-bottom: 27px;
+        text-align: center;
+      }
+
+      .button {
+        display: none;
+      }
+    }
+
+    .slider {
+      display: none;
+      width: 100%;
+      margin-bottom: 36px;
+    }
+
+    .products {
+      display: flex;
+
+      .product {
+        &:not(:last-child) {
+          margin-right: 30px;
+        }
+      }
+    }
+
+    .button {
+      display: flex;
+    }
+  }
 }
 
-.title {
-  font-size: 34px;
-  line-height: 150%;
-  margin-bottom: 16px;
-  color: #333333;
+@media screen and (max-width: 834px) {
+  .container {
+    .content {
+      .subtitle {
+        max-width: 330px;
+      }
+    }
+  }
 }
 
-.subtitle {
-  font-size: 20px;
-  line-height: 150%;
-  margin-bottom: 24px;
-  max-width: 300px;
-  color: #bdbdbd;
+@media screen and (max-width: 768px) {
+  .container {
+    .products {
+      .product {
+        &:not(:last-child) {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
 }
 
-.slider {
-  width: 840px;
+@media screen and (max-width: 640px) {
+  .container {
+    .slider {
+      display: block;
+      width: 100%;
+      margin-bottom: 36px;
+
+      .product {
+        margin-right: 10px;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+
+    .products {
+      display: none;
+    }
+  }
 }

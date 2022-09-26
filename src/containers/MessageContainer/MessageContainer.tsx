@@ -63,7 +63,7 @@ export const MessageContainer: React.FC<MessageContainerProps> = ({
 
       {answersOpen && (
         <div className={styles.hide}>
-          <Button className={styles.button} onClick={onAnswersHide} size="small">
+          <Button className={styles.button} onClick={onAnswersHide}>
             Hide Answers
           </Button>
         </div>

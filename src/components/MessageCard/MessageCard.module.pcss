@@ -1,75 +1,69 @@
 .card {
   width: 100%;
   padding: 20px 50px;
-  border: 1px solid #bdbdbd;
-}
+  border: var(--border-gray-1);
 
-.top {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 24px;
-}
-
-.user {
-  display: flex;
-
-  .avatar {
-    margin-right: 12px;
-  }
-
-  .column {
+  .top {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 24px;
   }
 
-  .username {
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 150%;
-    color: #333333;
-  }
-
-  .date {
-    font-size: 14px;
-    line-height: 150%;
-    color: #bdbdbd;
-  }
-}
-
-.bottom {
-  .message {
-    font-size: 16px;
-    line-height: 150%;
-    color: #333333;
-  }
-
-  .answers {
+  .user {
     display: flex;
-    align-items: center;
-    margin-top: 15px;
 
-    .icon {
-      margin-right: 10px;
-      cursor: pointer;
+    .avatar {
+      margin-right: 12px;
+    }
 
-      &:hover {
-        path {
-          stroke: #ffbf43;
+    .column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .username {
+    }
+
+    .date {
+    }
+  }
+
+  .bottom {
+    .message {
+    }
+
+    .answers {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+
+      .icon {
+        margin-right: 10px;
+        cursor: pointer;
+
+        &:hover {
+          path {
+            stroke: #ffbf43;
+          }
+        }
+      }
+
+      .amount {
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+          color: var(--color-brand);
         }
       }
     }
+  }
+}
 
-    .amount {
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 150%;
-      text-decoration: underline;
-      color: #333333;
-      cursor: pointer;
-
-      &:hover {
-        color: #ffbf43;
-      }
+@media screen and (max-width: 834px) {
+  .card {
+    .top {
+      margin-bottom: 20px;
     }
   }
 }

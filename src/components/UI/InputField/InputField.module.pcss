@@ -3,27 +3,23 @@
   align-items: center;
   width: 100%;
   padding: 0 28px;
-  border: 1px solid #bdbdbd;
-  border-radius: 4px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  color: #333333;
+  border: var(--border-gray-1);
+  border-radius: var(--input-rounded);
+  font-weight: var(--text-regular);
+  font-size: var(--text-size-s);
+  line-height: var(--text-lh-150);
+  color: var(--color-dark);
 
   &::placeholder {
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 21px;
-    color: #bdbdbd;
+    font-weight: var(--text-regular);
+    font-size: var(--text-size-xs);
+    line-height: var(--text-lh-150);
+    color: var(--color-gray);
   }
 }
 
 .error {
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
   margin-top: 10px;
-  color: red;
 }
 
 /* sizes */

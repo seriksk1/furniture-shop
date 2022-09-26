@@ -2,61 +2,123 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-}
 
-.info {
-  display: flex;
-  flex-direction: column;
-  max-width: 420px;
-  width: 100%;
-}
+  .info {
+    display: flex;
+    flex-direction: column;
+    max-width: 420px;
+    width: 100%;
 
-.title {
-  font-size: 34px;
-  line-height: 150%;
-  margin-bottom: 8px;
-  color: #333333;
-}
+    .title {
+      margin-bottom: 8px;
+    }
 
-.description {
-  font-size: 20px;
-  line-height: 150%;
-  color: #bdbdbd;
-}
-
-.form {
-  display: flex;
-  align-items: flex-end;
-}
-
-.wrap {
-  display: flex;
-  flex-direction: column-reverse;
-  margin-right: 35px;
-  min-width: 240px;
-}
-
-.label {
-  font-size: 14px;
-  line-height: 150%;
-  color: #333333;
-}
-
-.input {
-  padding: 15px 0;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid #333333;
-
-  &:placeholder {
-    color: #bdbdbd;
-  }
-
-  &:focus {
-    border-bottom: 1px solid #ffbf43;
-
-    & ~ .label {
-      color: #ffbf43;
+    .description {
     }
   }
+
+  .form {
+    display: flex;
+    align-items: flex-end;
+
+    .wrap {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-right: 35px;
+      min-width: 240px;
+    }
+
+    .label {
+    }
+
+    .input {
+      padding: 15px 0;
+      outline: none;
+      border: none;
+      border-bottom: var(--border-dark-1);
+
+      &:placeholder {
+        color: var(--color-gray);
+      }
+
+      &:focus {
+        border-bottom: var(--border-brand-1);
+
+        & ~ .label {
+          color: var(--color-brand);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    .info {
+      margin-bottom: 80px;
+
+      .title {
+        margin-bottom: 5px;
+        text-align: center;
+      }
+
+      .description {
+        text-align: center;
+      }
+    }
+
+    .form {
+      width: 100%;
+      justify-content: space-between;
+
+      .wrap {
+        flex: 1;
+        margin-right: 9.5vw;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 834px) {
+  .container {
+    .info {
+      align-items: center;
+
+      .description {
+        max-width: 420px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    .form {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .wrap {
+        width: 100%;
+        margin: 0 0 32px;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 360px) {
 }

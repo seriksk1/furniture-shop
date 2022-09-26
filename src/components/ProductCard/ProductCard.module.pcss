@@ -4,43 +4,36 @@
   flex-direction: column;
   align-items: center;
   width: fit-content;
-}
 
-.image {
-  width: 260px;
-  height: 280px;
-  margin-bottom: 20px;
-}
-
-.stars {
-  display: flex;
-  align-items: center;
-  margin-bottom: 5px;
-}
-
-.name {
-  width: fit-content;
-  font-size: 20px;
-  line-height: 150%;
-  text-align: center;
-  margin-bottom: 5px;
-  color: #333333;
-}
-
-.price {
-  width: fit-content;
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 150%;
-  text-align: center;
-  color: #333333;
-
-  .priceBefore {
-    text-decoration: line-through;
+  .image {
+    width: 260px;
+    height: 280px;
+    margin-bottom: 20px;
   }
 
-  .priceAfter {
-    margin-left: 8px;
-    color: #ff0000;
+  .stars {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+  }
+
+  .name {
+    width: fit-content;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .price {
+    width: fit-content;
+    text-align: center;
+
+    .priceBefore {
+      text-decoration: line-through;
+    }
+
+    .priceAfter {
+      margin-left: 8px;
+      color: var(--color-red);
+    }
   }
 }

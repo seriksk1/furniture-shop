@@ -7,13 +7,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #bdbdbd;
+  border-bottom: var(--border-gray-1);
   cursor: pointer;
 
   .title {
-    font-size: 20px;
-    line-height: 30px;
-    color: #333333;
   }
 
   .icon {
@@ -21,7 +18,7 @@
     transition: 0.3s ease-in transform;
 
     path {
-      fill: #333333;
+      fill: var(--color-dark);
     }
   }
 }
@@ -33,10 +30,10 @@
 
 .active {
   .top {
-    border-bottom: 1px solid #ffbf43;
+    border-bottom: var(--border-brand-1);
 
     .title {
-      color: #ffbf43;
+      color: var(--color-brand);
     }
 
     .icon {

@@ -2,7 +2,16 @@ import React from "react"
 import classNames from "classnames"
 import styles from "./Payment.module.pcss"
 import { ArrowForward, CheckIcon } from "../../../../assets/icons"
-import { Button, Modal, PaymentForm } from "../../../../components"
+import {
+  Button,
+  ButtonColors,
+  Modal,
+  PaymentForm,
+  Typography,
+  TypographyColors,
+  TypographySizes,
+  TypographyWeights,
+} from "../../../../components"
 import { useNavigate } from "react-router-dom"
 import { appPaths } from "../../../../constants"
 import { useToggle } from "../../../../hooks"
@@ -24,35 +33,41 @@ export const Payment: React.FC<PaymentProps> = ({ className, toPrevStep }) => {
 
   return (
     <div className={classes}>
-      <div className={styles.title}>Payment</div>
+      <Typography className={styles.title} size={TypographySizes.extraLarge}>
+        Payment
+      </Typography>
       <div className={styles.content}>
         <PaymentForm className={styles.form} />
         <div className={styles.order}>
-          <div className={styles.label}>Your Order</div>
+          <Typography className={styles.label} size={TypographySizes.medium}>
+            Your Order
+          </Typography>
           <div className={styles.costs}>
             <div className={styles.row}>
-              <div className={styles.name}>Item Cost</div>
-              <div className={styles.value}>$420.00</div>
+              <Typography>Item Cost</Typography>
+              <Typography>$420.00</Typography>
             </div>
             <div className={styles.row}>
-              <div className={styles.name}>Delivery</div>
-              <div className={styles.value}>Free</div>
+              <Typography>Delivery</Typography>
+              <Typography>Free</Typography>
             </div>
             <div className={styles.row}>
-              <div className={styles.name}>Discount</div>
-              <div className={styles.value}>$0</div>
+              <Typography>Discount</Typography>
+              <Typography>$0</Typography>
             </div>
             <div className={styles.row}>
-              <div className={styles.name}>Promocode</div>
-              <div className={styles.value}>$0</div>
+              <Typography>Promocode</Typography>
+              <Typography>$0</Typography>
             </div>
           </div>
           <div className={styles.total}>
-            <div className={styles.name}>Total Price:</div>
-            <div className={styles.price}>$420.00</div>
+            <Typography size={TypographySizes.medium}>Total Price:</Typography>
+            <Typography size={TypographySizes.large} weight={TypographyWeights.medium}>
+              $420.00
+            </Typography>
           </div>
           <div className={styles.submit}>
-            <Button size="small" onClick={onModalOpen}>
+            <Button onClick={onModalOpen}>
               <span>Buy</span>
               <ArrowForward />
             </Button>
@@ -60,20 +75,31 @@ export const Payment: React.FC<PaymentProps> = ({ className, toPrevStep }) => {
         </div>
       </div>
       <div className={styles.bottom}>
-        <div className={styles.back} onClick={toPrevStep}>
+        <Typography className={styles.back} size={TypographySizes.medium} onClick={toPrevStep}>
           <ArrowForward className={styles.icon} />
           <span>Back to shopping cart</span>
-        </div>
+        </Typography>
       </div>
 
       {modalOpen && (
         <Modal className={styles.modal} onClose={onModalSubmit}>
           <CheckIcon className={styles.icon} />
-          <div className={styles.caption}>Congrats!</div>
-          <div className={styles.description}>
+          <Typography
+            className={styles.caption}
+            size={TypographySizes.large}
+            weight={TypographyWeights.semibold}
+            color={TypographyColors.white}
+          >
+            Congrats!
+          </Typography>
+          <Typography
+            className={styles.description}
+            size={TypographySizes.large}
+            color={TypographyColors.gray}
+          >
             Thank you for purchasing. Your order will be shipped in 2-3 working day.
-          </div>
-          <Button color="white" size="small" onClick={onModalSubmit}>
+          </Typography>
+          <Button color={ButtonColors.white} onClick={onModalSubmit}>
             Done
           </Button>
         </Modal>

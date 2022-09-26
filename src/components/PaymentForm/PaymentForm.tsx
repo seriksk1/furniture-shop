@@ -1,7 +1,7 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./PaymentForm.module.pcss"
-import { Checkbox, InputField } from "../UI"
+import { Checkbox, InputField, Typography, TypographySizes } from "../UI"
 import { SubmitHandler, useForm } from "react-hook-form"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { paymentFormSchema } from "./payment-form.validation"
@@ -47,7 +47,9 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ className }) => {
   return (
     <form className={classes} onSubmit={handleSubmit(onSubmit)}>
       <div className={styles.section}>
-        <div className={styles.label}>Contact information</div>
+        <Typography className={styles.label} size={TypographySizes.medium}>
+          Contact information
+        </Typography>
         <InputField
           className={styles.input}
           type="email"
@@ -57,7 +59,9 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ className }) => {
         />
       </div>
       <div className={styles.section}>
-        <div className={styles.label}>Shipping address</div>
+        <Typography className={styles.label} size={TypographySizes.medium}>
+          Shipping address
+        </Typography>
         <div className={styles.row}>
           <InputField
             className={styles.input}
@@ -101,15 +105,29 @@ export const PaymentForm: React.FC<PaymentFormProps> = ({ className }) => {
         />
       </div>
       <div className={styles.section}>
-        <div className={styles.label}>Payment method</div>
+        <Typography className={styles.label} size={TypographySizes.medium}>
+          Payment method
+        </Typography>
         <div className={styles.paymentType}>
-          <Checkbox className={styles.checkbox} checked={false}>
+          <Checkbox
+            className={styles.checkbox}
+            checked={false}
+            onToggle={() => console.log("toggle 1")}
+          >
             Cash
           </Checkbox>
-          <Checkbox className={styles.checkbox} checked={true}>
+          <Checkbox
+            className={styles.checkbox}
+            checked={true}
+            onToggle={() => console.log("toggle 2")}
+          >
             Card
           </Checkbox>
-          <Checkbox className={styles.checkbox} checked={false}>
+          <Checkbox
+            className={styles.checkbox}
+            checked={false}
+            onToggle={() => console.log("toggle 3")}
+          >
             PayPal
           </Checkbox>
         </div>

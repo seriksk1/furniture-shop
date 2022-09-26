@@ -1,51 +1,56 @@
 .container {
-}
+  .selection {
+    margin-bottom: 30px;
 
-.selection {
-  margin-bottom: 30px;
+    button {
+      flex: 1;
+      margin: 0;
+    }
 
-  button {
-    flex: 1;
-    margin: 0;
+    .selected {
+      border-bottom: var(--border-dark-1);
+      color: var(--color-dark);
+    }
+
+    .notSelected {
+      border-bottom: var(--border-gray-1);
+      color: var(--color-gray);
+    }
   }
 
-  .selected {
-    border-bottom: 1px solid #333333;
-    color: #333333;
+  .add {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+
+    button {
+      svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 8px;
+      }
+    }
   }
 
-  .notSelected {
-    border-bottom: 1px solid #bdbdbd;
-    color: #bdbdbd;
-  }
-}
+  .sort {
+    display: flex;
+    align-items: center;
+    margin-bottom: 24px;
 
-.add {
-  display: flex;
-  justify-content: flex-end;
-  margin-bottom: 10px;
-
-  button {
-    svg {
-      width: 24px;
-      height: 24px;
-      margin-right: 8px;
+    .label {
+      margin-right: 28px;
     }
   }
 }
 
-.sort {
-  display: flex;
-  align-items: center;
-  margin-bottom: 24px;
+@media screen and (max-width: 834px) {
+  .container {
+    .add {
+      margin-bottom: 25px;
 
-  .label {
-    font-size: 16px;
-    line-height: 150%;
-    margin-right: 28px;
-    color: #333333;
-  }
-
-  .dropdown {
+      button {
+        width: 100%;
+      }
+    }
   }
 }

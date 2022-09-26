@@ -1,73 +1,68 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./BestProducts.module.pcss"
-import { ArrowForward } from "../../../../assets/icons"
-import { Button, ProductCard } from "../../../../components"
+import { ArrowForward, ChevronLeft } from "../../../../assets/icons"
+import {
+  Button,
+  ProductCard,
+  Typography,
+  TypographyColors,
+  TypographySizes,
+} from "../../../../components"
 import { CustomSlider } from "../../../../containers"
-
-import bestProduct1 from "../../../../assets/images/best-products/1.png"
-import bestProduct2 from "../../../../assets/images/best-products/2.png"
-import bestProduct3 from "../../../../assets/images/best-products/3.png"
+import { bestProducts } from "../../../../mocks"
+import { useMobileDevice } from "../../../../hooks"
 
 interface BestProductsProps {
   className?: string
 }
 
-const products: ProductList = [
-  {
-    image: bestProduct1,
-    stars: 5,
-    name: "Marilee Platform Bed",
-    price: "237$",
-    isNew: true,
-  },
-  {
-    image: bestProduct2,
-    stars: 4,
-    name: "Middlebury Standard Bed",
-    price: "237$",
-    discountPrice: "199$",
-  },
-  {
-    image: bestProduct3,
-    stars: 3,
-    name: "Riya Low Profile Bed",
-    price: "237$",
-    isNew: true,
-  },
-  {
-    image: bestProduct2,
-    stars: 4,
-    name: "Middlebury Standard Bed",
-    price: "237$",
-    discountPrice: "199$",
-  },
-  {
-    image: bestProduct3,
-    stars: 3,
-    name: "Riya Low Profile Bed",
-    price: "237$",
-  },
-]
-
 export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
+  const isMobileDevice = useMobileDevice(640)
 
   return (
     <div className={classes}>
       <div className={styles.content}>
-        <div className={styles.title}>Best Selling Product</div>
-        <div className={styles.subtitle}>Lorem ipsum dolor sit amet, consectetur adipiscing.</div>
-        <Button size="small">
+        <Typography className={styles.title} size={TypographySizes.extraLarge}>
+          Best Selling Product
+        </Typography>
+        <Typography
+          className={styles.subtitle}
+          size={TypographySizes.medium}
+          color={TypographyColors.gray}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing.
+        </Typography>
+
+        <Button className={styles.button}>
           <span>See all</span>
           <ArrowForward />
         </Button>
       </div>
-      <CustomSlider className={styles.slider} slidesToShow={3}>
-        {products.map((product, i) => (
-          <ProductCard key={i} product={product} />
+
+      <CustomSlider
+        className={styles.slider}
+        slidesToShow={isMobileDevice ? 2.1 : 3}
+        arrows={isMobileDevice ? false : true}
+        nextArrow={<ChevronLeft />}
+        prevArrow={<ChevronLeft />}
+      >
+        {bestProducts.map((product, i) => (
+          <ProductCard key={i} className={styles.product} product={product} />
         ))}
       </CustomSlider>
+
+      <div className={styles.products}>
+        {bestProducts.slice(0, 3).map((product, i) => (
+          <ProductCard key={i} className={styles.product} product={product} />
+        ))}
+      </div>
+
+      <Button className={styles.button} fullWidth>
+        <span>See all</span>
+        <ArrowForward />
+      </Button>
     </div>
   )
 }

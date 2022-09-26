@@ -2,6 +2,7 @@ import React from "react"
 import classNames from "classnames"
 import styles from "./Accordion.module.pcss"
 import { ChevronLeft } from "../../../assets/icons"
+import { Typography, TypographySizes } from "../Typography/Typography"
 
 interface AccordionProps extends React.PropsWithChildren {
   className?: string
@@ -25,7 +26,9 @@ export const Accordion: React.FC<AccordionProps> = ({ className, children, title
   return (
     <div className={classes}>
       <div onClick={onToggle} className={styles.top}>
-        <div className={styles.title}>{title}</div>
+        <Typography className={styles.title} size={TypographySizes.medium}>
+          {title}
+        </Typography>
         <ChevronLeft className={styles.icon} />
       </div>
       <div className={styles.bottom}>{children}</div>
