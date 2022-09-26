@@ -20,13 +20,15 @@ export const CartProduct: React.FC<CartProductProps> = ({ className }) => {
   return (
     <div className={classes}>
       <img className={styles.image} src={productImage} alt="product image" />
-      <Typography className={styles.name} size={TypographySizes.medium}>
-        Pohlman Upholstered Low Profile Platform Bed
-      </Typography>
-      <Counter className={styles.counter} value={amount} setValue={setAmount} />
-      <Typography className={styles.price} size={TypographySizes.medium}>
-        $420.00
-      </Typography>
+      <div className={styles.info}>
+        <Typography className={styles.name} size={TypographySizes.medium}>
+          Pohlman Upholstered Low Profile Platform Bed
+        </Typography>
+        <Counter className={styles.counter} value={amount} setValue={setAmount} />
+        <Typography className={styles.price} size={TypographySizes.medium}>
+          $420.00
+        </Typography>
+      </div>
       <div className={styles.close} onClick={onRemoveFromCart}>
         <CloseIcon className={styles.icon} />
       </div>

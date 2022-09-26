@@ -1,114 +1,157 @@
 .container {
-}
-
-.title {
-  margin-bottom: 40px;
-  padding-bottom: 10px;
-  border-bottom: var(--border-gray-1);
-}
-
-.content {
-  display: flex;
-  margin-bottom: 40px;
-
-  .form {
-    width: 100%;
-    margin-right: 60px;
-    flex: 1;
+  .title {
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: var(--border-gray-1);
   }
 
-  .order {
-    width: 100%;
-    flex: 1;
+  .content {
+    display: flex;
+    margin-bottom: 40px;
 
-    .label {
-      margin-bottom: 40px;
-      text-transform: capitalize;
+    .form {
+      width: 100%;
+      margin-right: 60px;
+      flex: 1;
     }
 
-    .costs {
-      display: flex;
-      flex-direction: column;
-      padding-bottom: 22px;
-      margin-bottom: 16px;
-      border-bottom: var(--border-gray-1);
+    .order {
+      width: 100%;
+      flex: 1;
 
-      .row {
+      .label {
+        margin-bottom: 40px;
+        text-transform: capitalize;
+      }
+
+      .costs {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 22px;
+        margin-bottom: 16px;
+        border-bottom: var(--border-gray-1);
+
+        .row {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          &:not(:last-child) {
+            margin-bottom: 22px;
+          }
+        }
+      }
+
+      .total {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-bottom: 40px;
+      }
 
-        &:not(:last-child) {
-          margin-bottom: 22px;
+      .submit {
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+
+    .back {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--color-brand);
+
+        path {
+          fill: var(--color-brand);
+        }
+      }
+
+      .icon {
+        transform: rotate(180deg);
+        margin-right: 12px;
+      }
+    }
+  }
+
+  .modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+
+    .icon {
+      width: 89px;
+      height: 89px;
+      margin-bottom: 8px;
+
+      path {
+        stroke: var(--color-white);
+      }
+    }
+
+    .caption {
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .description {
+      margin-bottom: 36px;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container {
+    .content {
+      .form {
+        margin-right: 30px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    .content {
+      flex-direction: column;
+
+      .form {
+        margin-right: 0;
+      }
+
+      .order {
+        .submit {
+          width: 100%;
+
+          button {
+            width: 100%;
+          }
         }
       }
     }
-
-    .total {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 40px;
-    }
-
-    .submit {
-      display: flex;
-      justify-content: flex-end;
-    }
   }
 }
 
-.bottom {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
+@media screen and (max-width: 480px) {
+  .container {
+    .content {
+      .form {
+      }
 
-  .back {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    cursor: pointer;
-
-    &:hover {
-      color: var(--color-brand);
-
-      path {
-        fill: var(--color-brand);
+      .order {
       }
     }
-
-    .icon {
-      transform: rotate(180deg);
-      margin-right: 12px;
-    }
-  }
-}
-
-.modal {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto;
-
-  .icon {
-    width: 89px;
-    height: 89px;
-    margin-bottom: 8px;
-
-    path {
-      stroke: var(--color-white);
-    }
-  }
-
-  .caption {
-    margin-bottom: 24px;
-    text-align: center;
-  }
-
-  .description {
-    margin-bottom: 36px;
-    text-align: center;
   }
 }

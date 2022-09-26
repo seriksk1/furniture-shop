@@ -31,20 +31,21 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className, toNextSte
             <span>Back to shop</span>
           </Link>
         </Typography>
-        <div className={styles.total}>
-          <Typography className={styles.label} size={TypographySizes.medium}>
-            Total Price:
-          </Typography>
-          <Typography size={TypographySizes.large} weight={TypographyWeights.medium}>
-            $420.00
-          </Typography>
+
+        <div className={styles.checkout}>
+          <div className={styles.total}>
+            <Typography className={styles.label} size={TypographySizes.medium}>
+              Total Price:
+            </Typography>
+            <Typography size={TypographySizes.large} weight={TypographyWeights.medium}>
+              $420.00
+            </Typography>
+          </div>
+          <Button onClick={toNextStep}>
+            <span>Checkout</span>
+            <ArrowForward />
+          </Button>
         </div>
-      </div>
-      <div className={styles.checkout}>
-        <Button onClick={toNextStep}>
-          <span>Checkout</span>
-          <ArrowForward />
-        </Button>
       </div>
     </div>
   )

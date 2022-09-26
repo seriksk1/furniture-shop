@@ -3,7 +3,7 @@ import { RootState } from "../../store"
 
 const initialState: IAuthState = {
   user: null,
-  token: "", //temporary active
+  token: "token", //temporary active
 }
 
 const slice = createSlice({
