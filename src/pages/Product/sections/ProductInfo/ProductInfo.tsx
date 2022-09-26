@@ -48,7 +48,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className }) => {
           rectangular silhouette, and it&apos;s upholstered and stuffed with polyester.
         </Typography>
 
-        <div className={styles.row}>
+        <div className={styles.amount}>
           <div className={styles.price}>
             <Typography className={styles.label} size={TypographySizes.medium}>
               Price

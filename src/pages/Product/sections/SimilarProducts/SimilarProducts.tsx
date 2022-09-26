@@ -5,6 +5,7 @@ import { ProductCard, Typography, TypographyColors, TypographySizes } from "../.
 import { CustomSlider } from "../../../../containers"
 import { similarProducts } from "../../../../mocks"
 import { ChevronLeft } from "../../../../assets/icons"
+import { useMobileDevice } from "../../../../hooks"
 
 interface SimilarProductsProps {
   className?: string
@@ -12,6 +13,7 @@ interface SimilarProductsProps {
 
 export const SimilarProducts: React.FC<SimilarProductsProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
+  const isMobileDevice = useMobileDevice(1280)
 
   return (
     <div className={classes}>
@@ -29,12 +31,13 @@ export const SimilarProducts: React.FC<SimilarProductsProps> = ({ className }) =
       </div>
       <CustomSlider
         className={styles.slider}
-        slidesToShow={3}
+        slidesToShow={isMobileDevice ? 2.1 : 3}
+        arrows={isMobileDevice ? false : true}
         nextArrow={<ChevronLeft />}
         prevArrow={<ChevronLeft />}
       >
         {similarProducts.map((product, i) => (
-          <ProductCard key={i} product={product} />
+          <ProductCard key={i} className={styles.product} product={product} />
         ))}
       </CustomSlider>
     </div>

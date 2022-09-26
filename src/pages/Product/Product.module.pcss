@@ -1,14 +1,26 @@
 .container {
+  .product {
+    margin-bottom: 180px;
+  }
+
+  .similar {
+    margin-bottom: 168px;
+  }
+
+  .reviews {
+    margin-bottom: 120px;
+  }
 }
 
-.product {
-  margin-bottom: 180px;
-}
+@media screen and (max-width: 1280px) {
+  .container {
+    .product,
+    .reviews {
+      margin-bottom: 80px;
+    }
 
-.similar {
-  margin-bottom: 168px;
-}
-
-.reviews {
-  margin-bottom: 120px;
+    .similar {
+      margin-bottom: 120px;
+    }
+  }
 }

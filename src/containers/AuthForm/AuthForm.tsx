@@ -22,7 +22,7 @@ export const AuthForm: React.FC<AuthFormProps> = ({ className }) => {
 
   return (
     <div className={classes}>
-      <ButtonGroup>
+      <ButtonGroup className={styles.selection}>
         {authTypes.map((type) => {
           return (
             <Button

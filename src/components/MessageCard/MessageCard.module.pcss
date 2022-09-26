@@ -2,60 +2,68 @@
   width: 100%;
   padding: 20px 50px;
   border: var(--border-gray-1);
-}
 
-.top {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 24px;
-}
-
-.user {
-  display: flex;
-
-  .avatar {
-    margin-right: 12px;
-  }
-
-  .column {
+  .top {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 24px;
   }
 
-  .username {
-  }
-
-  .date {
-  }
-}
-
-.bottom {
-  .message {
-  }
-
-  .answers {
+  .user {
     display: flex;
-    align-items: center;
-    margin-top: 15px;
 
-    .icon {
-      margin-right: 10px;
-      cursor: pointer;
+    .avatar {
+      margin-right: 12px;
+    }
 
-      &:hover {
-        path {
-          stroke: #ffbf43;
+    .column {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .username {
+    }
+
+    .date {
+    }
+  }
+
+  .bottom {
+    .message {
+    }
+
+    .answers {
+      display: flex;
+      align-items: center;
+      margin-top: 15px;
+
+      .icon {
+        margin-right: 10px;
+        cursor: pointer;
+
+        &:hover {
+          path {
+            stroke: #ffbf43;
+          }
+        }
+      }
+
+      .amount {
+        text-decoration: underline;
+        cursor: pointer;
+
+        &:hover {
+          color: var(--color-brand);
         }
       }
     }
+  }
+}
 
-    .amount {
-      text-decoration: underline;
-      cursor: pointer;
-
-      &:hover {
-        color: var(--color-brand);
-      }
+@media screen and (max-width: 834px) {
+  .card {
+    .top {
+      margin-bottom: 20px;
     }
   }
 }
