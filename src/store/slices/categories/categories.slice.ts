@@ -6,10 +6,15 @@ const initialState = {}
 const categoriesSlice = createSlice({
   name: "categories",
   initialState,
-  reducers: {},
+  reducers: {
+    createCategory: (state, action) => {},
+    updateCategory: (state, action) => {},
+    deleteCategory: (state, action) => {},
+    setCategories: (state, action) => {},
+  },
 })
 
-export const {} = categoriesSlice.actions
+export const { createCategory, updateCategory, deleteCategory } = categoriesSlice.actions
 
 export const categoriesReducer = categoriesSlice.reducer
 

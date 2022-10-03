@@ -1,11 +1,10 @@
-interface IAuthState {
-  user: IUser | null
+interface AuthState {
+  user: User | null
   token: string | null
 }
 
 interface User {
-  first_name: string
-  last_name: string
+  email: string
 }
 
 //-------- Requests --------//
@@ -26,7 +25,6 @@ interface ForgotPasswordRequest {}
 //-------- Responses --------//
 
 interface RegisterResponse {
-  user: User
   token: string
 }
 

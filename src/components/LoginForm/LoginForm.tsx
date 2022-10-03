@@ -3,8 +3,11 @@ import { Link } from "react-router-dom"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { loginFormSchema } from "./login-form.validation"
-import { Button, InputField } from "../UI"
+import { Button, ButtonSizes, InputField } from "../UI"
 import styles from "./LoginForm.module.pcss"
+import { login, useLoginMutation } from "../../store/slices"
+import { useDispatch } from "react-redux"
+import { toast } from "react-toastify"
 
 interface ILoginFormInput {
   email: string
@@ -12,6 +15,7 @@ interface ILoginFormInput {
 }
 
 export const LoginForm: React.FC = () => {
+  const [loginRequest, { data: loginResponse, isLoading }] = useLoginMutation()
   const {
     register,
     handleSubmit,
@@ -20,8 +24,17 @@ export const LoginForm: React.FC = () => {
     resolver: yupResolver(loginFormSchema),
   })
 
-  const onSubmit: SubmitHandler<ILoginFormInput> = (value) => {
-    console.log(value)
+  const dispatch = useDispatch()
+
+  React.useEffect(() => {
+    if (loginResponse) {
+      dispatch(login(loginResponse))
+      toast.success("Login Success!")
+    }
+  }, [dispatch, loginResponse])
+
+  const onSubmit: SubmitHandler<ILoginFormInput> = (data) => {
+    loginRequest(data)
   }
 
   const onRegister = (name: any) => {
@@ -47,8 +60,8 @@ export const LoginForm: React.FC = () => {
         <Link to="/forgot-password">Forgot Password?</Link>
       </div>
 
-      <Button size="large" disabled={!isDirty} fullWidth submit>
-        Login
+      <Button size={ButtonSizes.large} disabled={!isDirty || isLoading} fullWidth submit>
+        {isLoading ? "Loading..." : "Login"}
       </Button>
     </form>
   )

@@ -1,0 +1,31 @@
+.sidebar {
+  width: 280px;
+  height: fit-content;
+  padding: 20px;
+  margin-right: 60px;
+  border-radius: var(--button-rounded);
+  background: var(--color-light);
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .item {
+      display: flex;
+      align-items: center;
+      border-radius: var(--button-rounded);
+      padding: 12px 8px;
+
+      &:not(&:last-child) {
+        margin-bottom: 12px;
+      }
+
+      &:hover {
+        background: var(--color-gray);
+        color: var(--color-white);
+        cursor: pointer;
+      }
+    }
+  }
+}

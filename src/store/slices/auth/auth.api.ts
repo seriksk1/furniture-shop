@@ -3,7 +3,7 @@ import { prepareHeadersWithToken } from "../../../utils"
 
 export const authApi = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: `${process.env.DB_HOST}/auth`,
+    baseUrl: `${process.env.API_URI}/auth`,
     prepareHeaders: prepareHeadersWithToken,
   }),
   endpoints: (builder) => ({
@@ -14,9 +14,9 @@ export const authApi = createApi({
         body: credentials,
       }),
     }),
-    register: builder.mutation<RegisterResponse, RegisterRequest>({
+    registration: builder.mutation<RegisterResponse, RegisterRequest>({
       query: (credentials) => ({
-        url: "register",
+        url: "registration",
         method: "POST",
         body: credentials,
       }),
@@ -40,7 +40,7 @@ export const authApi = createApi({
 
 export const {
   useLoginMutation,
-  useRegisterMutation,
+  useRegistrationMutation,
   useChangePasswordMutation,
   useForgotPasswordMutation,
 } = authApi

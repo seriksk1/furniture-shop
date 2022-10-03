@@ -1,18 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState } from "../../store"
 
-const initialState: IAuthState = {
+const initialState: AuthState = {
   user: null,
-  token: "token", //temporary active
+  token: null,
 }
 
 const slice = createSlice({
   name: "auth",
   initialState,
-  reducers: {},
+  reducers: {
+    registration: (state, { payload }: PayloadAction<RegisterResponse>) => {
+      state.token = payload.token
+    },
+    login: (state, { payload }: PayloadAction<LoginResponse>) => {
+      state.token = payload.token
+    },
+    logout: (state) => {
+      state.token = null
+      state.user = null
+    },
+  },
 })
 
-export const {} = slice.actions
+export const { login, registration, logout } = slice.actions
 
 export const selectAuth = (state: RootState) => state.auth
 

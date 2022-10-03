@@ -48,7 +48,7 @@ export const Header: React.FC = () => {
 
       <div className={styles.tools}>
         {!isMobileDevice && (
-          <Link to={appPaths.home}>
+          <Link to={appPaths.profile}>
             <AccountCircleOutlined className={styles.icon} />
           </Link>
         )}
@@ -56,7 +56,7 @@ export const Header: React.FC = () => {
           <ShoppingCartFilled className={styles.icon} />
         </Link>
         {!isMobileDevice && (
-          <Link to={appPaths.product}>
+          <Link to={appPaths.admin}>
             <SearchOutlined className={styles.icon} />
           </Link>
         )}

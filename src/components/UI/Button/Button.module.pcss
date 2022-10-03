@@ -42,9 +42,14 @@
 /*------------------TYPES------------------*/
 .outlined {
   box-shadow: none;
-  background: var(--color-transparent);
   border: var(--border-dark-1);
+  background: var(--color-transparent);
   color: var(--color-dark);
+
+  &:hover {
+    color: var(--color-brand);
+    border: var(--border-brand-1);
+  }
 }
 
 .borderless {
@@ -66,27 +71,28 @@
       }
     }
   }
-}
 
-/*------------------COLORS------------------*/
-.white {
-  color: var(--color-dark);
-  background: var(--color-white);
+  /*------------------COLORS------------------*/
 
-  path {
-    fill: var(--color-dark);
+  &.white {
+    color: var(--color-dark);
+    background: var(--color-white);
+
+    path {
+      fill: var(--color-dark);
+    }
   }
-}
 
-.dark {
-  background: var(--color-dark);
-  color: var(--color-white);
+  &.dark {
+    color: var(--color-white);
+    background: var(--color-dark);
 
-  path {
-    fill: var(--color-white);
+    path {
+      fill: var(--color-white);
+    }
   }
-}
 
-.transparent {
-  background: var(--color-transparent);
+  &.transparent {
+    background: var(--color-transparent);
+  }
 }

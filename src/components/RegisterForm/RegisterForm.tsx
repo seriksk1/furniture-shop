@@ -15,6 +15,9 @@ import {
 import styles from "./RegisterForm.module.pcss"
 import { useToggle } from "../../hooks"
 import { appPaths } from "../../constants"
+import { registration, useRegistrationMutation } from "../../store/slices"
+import { useDispatch } from "react-redux"
+import { toast } from "react-toastify"
 
 interface IRegisterFormInput {
   email: string
@@ -23,6 +26,9 @@ interface IRegisterFormInput {
 }
 
 export const RegisterForm: React.FC = () => {
+  const [registerRequest, { data: registerResponse, isLoading, isError, isSuccess }] =
+    useRegistrationMutation()
+  const { active: termsChecked, onToggle: onTermsToggle } = useToggle(false)
   const {
     register,
     handleSubmit,
@@ -31,10 +37,17 @@ export const RegisterForm: React.FC = () => {
     resolver: yupResolver(registerFormSchema),
   })
 
-  const { active: termsChecked, onToggle: onTermsToggle } = useToggle(false)
+  const dispatch = useDispatch()
 
-  const onSubmit: SubmitHandler<IRegisterFormInput> = (data) => {
-    console.log(data)
+  React.useEffect(() => {
+    if (registerResponse) {
+      dispatch(registration(registerResponse))
+      toast.success("Registration Success!")
+    }
+  }, [dispatch, registerResponse])
+
+  const onSubmit: SubmitHandler<IRegisterFormInput> = ({ email, password }) => {
+    registerRequest({ email, password })
   }
 
   const onRegister = (name: any) => {
