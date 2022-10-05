@@ -1,10 +1,9 @@
 import React from "react"
 import classNames from "classnames"
 import Slider, { Settings } from "react-slick"
-import { ChevronLeft } from "../../assets/icons"
+import styles from "./CustomSlider.module.pcss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import styles from "./CustomSlider.module.pcss"
 
 interface CustomSliderProps extends React.PropsWithChildren {
   pagination?: boolean

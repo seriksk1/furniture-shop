@@ -5,7 +5,7 @@ import { CustomSlider } from "../../../../containers"
 import { CategoryCard, Typography, TypographyColors, TypographySizes } from "../../../../components"
 import { categories } from "../../../../mocks"
 import { ChevronLeft } from "../../../../assets/icons"
-import { useMobileDevice } from "../../../../hooks"
+import { useWidthBreakpoint } from "../../../../hooks"
 
 interface CategoriesProps {
   className?: string
@@ -13,7 +13,7 @@ interface CategoriesProps {
 
 export const Categories: React.FC<CategoriesProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
-  const isMobileDevice = useMobileDevice(640)
+  const isMobileDevice = useWidthBreakpoint(640)
 
   return (
     <div className={classes}>

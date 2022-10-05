@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { RootState } from "../../store"
+import { RootState } from "../../../store"
 
 const initialState = {}
 
@@ -18,4 +18,4 @@ export const { createProduct, updateProduct, deleteProduct, setProducts } = prod
 
 export const productsReducer = productsSlice.reducer
 
-export const selectProducts = (state: RootState) => state.products
+export const selectProducts = (state: RootState) => state.admin.products

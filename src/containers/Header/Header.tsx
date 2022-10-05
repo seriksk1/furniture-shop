@@ -9,7 +9,7 @@ import {
 } from "../../assets/icons"
 import { Typography, TypographySizes } from "../../components"
 import { appPaths } from "../../constants"
-import { useMobileDevice } from "../../hooks"
+import { useWidthBreakpoint } from "../../hooks"
 import styles from "./Header.module.pcss"
 
 export interface NavLink {
@@ -28,7 +28,7 @@ const navigationLinks: NavLinkList = [
 ]
 
 export const Header: React.FC = () => {
-  const isMobileDevice = useMobileDevice()
+  const isMobileDevice = useWidthBreakpoint()
 
   return (
     <div className={styles.header}>

@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom"
 import { LogoIcon } from "../../assets/icons"
 import { appPaths } from "../../constants"
 import { AuthForm, CustomSlider } from "../../containers"
-import { useMobileDevice } from "../../hooks"
+import { useWidthBreakpoint } from "../../hooks"
 import { selectAuth } from "../../store/slices"
 import styles from "./Auth.module.pcss"
 
@@ -15,7 +15,7 @@ const sliderImages = [authBackgroundImage1, authBackgroundImage2, authBackground
 
 export const Auth: React.FC = () => {
   const { token } = useSelector(selectAuth)
-  const isMobileDevice = useMobileDevice(1024)
+  const isMobileDevice = useWidthBreakpoint(1024)
 
   if (token) {
     return <Navigate to={appPaths.home} />

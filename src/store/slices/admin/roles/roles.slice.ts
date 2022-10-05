@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { RootState } from "../../store"
+import { RootState } from "../../../store"
 
 const initialState = {}
 
@@ -17,4 +17,4 @@ export const { createRole, updateRole, deleteRole } = rolesSlice.actions
 
 export const rolesReducer = rolesSlice.reducer
 
-export const selectRoles = (state: RootState) => state.roles
+export const selectRoles = (state: RootState) => state.admin.roles

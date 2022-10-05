@@ -5,7 +5,7 @@ import { ProductCard, Typography, TypographyColors, TypographySizes } from "../.
 import { CustomSlider } from "../../../../containers"
 import { similarProducts } from "../../../../mocks"
 import { ChevronLeft } from "../../../../assets/icons"
-import { useMobileDevice } from "../../../../hooks"
+import { useWidthBreakpoint } from "../../../../hooks"
 
 interface SimilarProductsProps {
   className?: string
@@ -13,7 +13,7 @@ interface SimilarProductsProps {
 
 export const SimilarProducts: React.FC<SimilarProductsProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
-  const isMobileDevice = useMobileDevice(1280)
+  const isMobileDevice = useWidthBreakpoint(1280)
 
   return (
     <div className={classes}>

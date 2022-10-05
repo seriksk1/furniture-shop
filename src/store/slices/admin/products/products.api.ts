@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { prepareHeadersWithToken } from "../../../utils"
+import { prepareHeadersWithToken } from "../../../../utils"
 
 export const productsApi = createApi({
   baseQuery: fetchBaseQuery({

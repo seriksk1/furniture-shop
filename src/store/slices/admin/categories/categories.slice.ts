@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { RootState } from "../../store"
+import { RootState } from "../../../store"
 
 const initialState = {}
 
@@ -18,4 +18,4 @@ export const { createCategory, updateCategory, deleteCategory } = categoriesSlic
 
 export const categoriesReducer = categoriesSlice.reducer
 
-export const selectCategories = (state: RootState) => state.categories
+export const selectCategories = (state: RootState) => state.admin.categories

@@ -11,7 +11,7 @@ import {
 } from "../../../../components"
 import { CustomSlider } from "../../../../containers"
 import { bestProducts } from "../../../../mocks"
-import { useMobileDevice } from "../../../../hooks"
+import { useWidthBreakpoint } from "../../../../hooks"
 
 interface BestProductsProps {
   className?: string
@@ -19,7 +19,7 @@ interface BestProductsProps {
 
 export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
-  const isMobileDevice = useMobileDevice(640)
+  const isMobileDevice = useWidthBreakpoint(640)
 
   return (
     <div className={classes}>
