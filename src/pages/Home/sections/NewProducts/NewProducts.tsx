@@ -3,6 +3,7 @@ import classNames from "classnames"
 import styles from "./NewProducts.module.pcss"
 import {
   Button,
+  Container,
   ProductCard,
   Typography,
   TypographyColors,
@@ -19,7 +20,7 @@ export const NewProducts: React.FC<NewProductsProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
 
   return (
-    <div className={classes}>
+    <Container className={classes}>
       <Typography className={styles.title} size={TypographySizes.extraLarge}>
         New Products
       </Typography>
@@ -39,6 +40,6 @@ export const NewProducts: React.FC<NewProductsProps> = ({ className }) => {
         <span>See all</span>
         <ArrowForward />
       </Button>
-    </div>
+    </Container>
   )
 }

@@ -4,6 +4,7 @@ import styles from "./BestProducts.module.pcss"
 import { ArrowForward, ChevronLeft } from "../../../../assets/icons"
 import {
   Button,
+  Container,
   ProductCard,
   Typography,
   TypographyColors,
@@ -22,7 +23,7 @@ export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
   const isMobileDevice = useWidthBreakpoint(640)
 
   return (
-    <div className={classes}>
+    <Container className={classes}>
       <div className={styles.content}>
         <Typography className={styles.title} size={TypographySizes.extraLarge}>
           Best Selling Product
@@ -63,6 +64,6 @@ export const BestProducts: React.FC<BestProductsProps> = ({ className }) => {
         <span>See all</span>
         <ArrowForward />
       </Button>
-    </div>
+    </Container>
   )
 }

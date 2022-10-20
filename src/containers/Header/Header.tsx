@@ -7,7 +7,7 @@ import {
   SearchOutlined,
   ShoppingCartFilled,
 } from "../../assets/icons"
-import { Typography, TypographySizes } from "../../components"
+import { Container, Typography, TypographySizes } from "../../components"
 import { appPaths } from "../../constants"
 import { useWidthBreakpoint } from "../../hooks"
 import styles from "./Header.module.pcss"
@@ -31,7 +31,7 @@ export const Header: React.FC = () => {
   const isMobileDevice = useWidthBreakpoint()
 
   return (
-    <div className={styles.header}>
+    <Container className={styles.header}>
       {isMobileDevice && <MenuIcon className={styles.menuIcon} />}
 
       <LogoIcon className={styles.logo} />
@@ -61,6 +61,6 @@ export const Header: React.FC = () => {
           </Link>
         )}
       </div>
-    </div>
+    </Container>
   )
 }

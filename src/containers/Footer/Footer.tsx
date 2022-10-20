@@ -10,14 +10,14 @@ import {
   YoutubeIcon,
 } from "../../assets/icons"
 import styles from "./Footer.module.pcss"
-import { Typography, TypographySizes, TypographyWeights } from "../../components"
+import { Container, Typography, TypographySizes, TypographyWeights } from "../../components"
 
 export const Footer: React.FC = () => {
   const classes = classNames(styles.container)
 
   return (
     <footer className={classes}>
-      <div className={styles.wrap}>
+      <Container className={styles.wrap}>
         <div className={styles.top}>
           <div className={styles.section}>
             <Typography
@@ -112,7 +112,7 @@ export const Footer: React.FC = () => {
           </div>
           <Typography className={styles.text}>Copyright © 2022 Furniture Corporation</Typography>
         </div>
-      </div>
+      </Container>
     </footer>
   )
 }

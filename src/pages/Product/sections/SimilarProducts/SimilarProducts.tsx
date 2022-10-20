@@ -1,7 +1,13 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./SimilarProducts.module.pcss"
-import { ProductCard, Typography, TypographyColors, TypographySizes } from "../../../../components"
+import {
+  Container,
+  ProductCard,
+  Typography,
+  TypographyColors,
+  TypographySizes,
+} from "../../../../components"
 import { CustomSlider } from "../../../../containers"
 import { similarProducts } from "../../../../mocks"
 import { ChevronLeft } from "../../../../assets/icons"
@@ -16,7 +22,7 @@ export const SimilarProducts: React.FC<SimilarProductsProps> = ({ className }) =
   const isMobileDevice = useWidthBreakpoint(1280)
 
   return (
-    <div className={classes}>
+    <Container className={classes}>
       <div className={styles.content}>
         <Typography className={styles.title} size={TypographySizes.extraLarge}>
           Similar Products
@@ -40,6 +46,6 @@ export const SimilarProducts: React.FC<SimilarProductsProps> = ({ className }) =
           <ProductCard key={i} className={styles.product} product={product} />
         ))}
       </CustomSlider>
-    </div>
+    </Container>
   )
 }

@@ -4,6 +4,7 @@ import styles from "./Hero.module.pcss"
 import {
   Button,
   ButtonColors,
+  Container,
   Typography,
   TypographyColors,
   TypographyLineHeights,
@@ -23,7 +24,7 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
   const classes = classNames(styles.hero, className)
 
   return (
-    <div className={classes}>
+    <Container className={classes}>
       <div className={styles.content}>
         <div className={styles.left}>
           <Typography
@@ -60,6 +61,6 @@ export const Hero: React.FC<HeroProps> = ({ className }) => {
         <div className={styles.yellow} />
         <img className={styles.decoration} src={heroDecoration} alt="" />
       </div>
-    </div>
+    </Container>
   )
 }

@@ -45,12 +45,26 @@
 
 @media screen and (max-width: 834px) {
   .container {
-    .add {
-      margin-bottom: 25px;
+    padding: 0;
 
-      button {
-        width: 100%;
-      }
+    .add {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 25px;
+    }
+
+    .sort {
+      padding: 0 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .container {
+    padding: 0;
+
+    .sort {
+      padding: 0 20px;
     }
   }
 }
