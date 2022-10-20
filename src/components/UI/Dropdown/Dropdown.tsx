@@ -10,10 +10,9 @@ interface DropdownProps {
 }
 
 export const Dropdown: React.FC<DropdownProps> = ({ className, list }) => {
+  const classes = classNames(styles.container, className)
   const [open, setOpen] = React.useState(false)
   const [currentItem, setCurrentItem] = React.useState(list[0] || "")
-
-  const classes = classNames(styles.container, className)
 
   const onMouseEnter = () => {
     if (!open) {

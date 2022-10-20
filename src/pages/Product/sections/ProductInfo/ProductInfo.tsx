@@ -5,6 +5,7 @@ import productImage from "../../../../assets/images/product/1.png"
 import {
   Accordion,
   Button,
+  Container,
   Counter,
   Rating,
   Typography,
@@ -23,7 +24,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
 
   return (
-    <div className={classes}>
+    <Container className={classes}>
       <img className={styles.image} src={productImage} alt="product" />
       <div className={styles.info}>
         <Typography
@@ -141,6 +142,6 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className }) => {
           </Accordion>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }

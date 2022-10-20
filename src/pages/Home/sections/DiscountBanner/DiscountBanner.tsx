@@ -3,6 +3,7 @@ import classNames from "classnames"
 import styles from "./DiscountBanner.module.pcss"
 import {
   Button,
+  Container,
   Tip,
   TipTypes,
   Typography,
@@ -22,40 +23,42 @@ export const DiscountBanner: React.FC<DiscountBannerProps> = ({ className }) => 
   const classes = classNames(styles.container, className)
 
   return (
-    <div className={classes}>
-      <img className={styles.image} src={saleImage} alt="sale" />
-      <div className={styles.wrap}>
-        <div className={styles.brand}>
-          <img src={brandLogo} alt="brand" />
-        </div>
-        <div className={styles.discount}>
-          <Typography
-            className={styles.time}
-            size={TypographySizes.medium}
-            weight={TypographyWeights.medium}
-            color={TypographyColors.white}
-          >
-            For a limited time
-          </Typography>
-          <div className={styles.content}>
-            <Typography className={styles.title} size={TypographySizes.medium}>
-              Save up to
-            </Typography>
-            <Typography className={styles.value} weight={TypographyWeights.extrabold}>
-              30%
-            </Typography>
+    <Container>
+      <div className={classes}>
+        <img className={styles.image} src={saleImage} alt="sale" />
+        <div className={styles.wrap}>
+          <div className={styles.brand}>
+            <img src={brandLogo} alt="brand" />
+          </div>
+          <div className={styles.discount}>
             <Typography
-              className={styles.subtitle}
-              size={TypographySizes.huge}
+              className={styles.time}
+              size={TypographySizes.medium}
               weight={TypographyWeights.medium}
+              color={TypographyColors.white}
             >
-              OFF
+              For a limited time
             </Typography>
-            <Button className={styles.button}>Shop Now</Button>
+            <div className={styles.content}>
+              <Typography className={styles.title} size={TypographySizes.medium}>
+                Save up to
+              </Typography>
+              <Typography className={styles.value} weight={TypographyWeights.extrabold}>
+                30%
+              </Typography>
+              <Typography
+                className={styles.subtitle}
+                size={TypographySizes.huge}
+                weight={TypographyWeights.medium}
+              >
+                OFF
+              </Typography>
+              <Button className={styles.button}>Shop Now</Button>
+            </div>
           </div>
         </div>
+        <Tip className={styles.tip} type={TipTypes.sale} />
       </div>
-      <Tip className={styles.tip} type={TipTypes.sale} />
-    </div>
+    </Container>
   )
 }

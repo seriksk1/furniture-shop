@@ -2,10 +2,16 @@ import React from "react"
 import classNames from "classnames"
 import styles from "./Categories.module.pcss"
 import { CustomSlider } from "../../../../containers"
-import { CategoryCard, Typography, TypographyColors, TypographySizes } from "../../../../components"
+import {
+  CategoryCard,
+  Container,
+  Typography,
+  TypographyColors,
+  TypographySizes,
+} from "../../../../components"
 import { categories } from "../../../../mocks"
 import { ChevronLeft } from "../../../../assets/icons"
-import { useMobileDevice } from "../../../../hooks"
+import { useWidthBreakpoint } from "../../../../hooks"
 
 interface CategoriesProps {
   className?: string
@@ -13,10 +19,10 @@ interface CategoriesProps {
 
 export const Categories: React.FC<CategoriesProps> = ({ className }) => {
   const classes = classNames(styles.container, className)
-  const isMobileDevice = useMobileDevice(640)
+  const isMobileDevice = useWidthBreakpoint(640)
 
   return (
-    <div className={classes}>
+    <Container className={classes}>
       <Typography className={styles.title} size={TypographySizes.extraLarge}>
         Choose Categories
       </Typography>
@@ -45,6 +51,6 @@ export const Categories: React.FC<CategoriesProps> = ({ className }) => {
           <CategoryCard key={i} className={styles.category} category={category} />
         ))}
       </div>
-    </div>
+    </Container>
   )
 }

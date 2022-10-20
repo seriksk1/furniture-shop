@@ -3,7 +3,13 @@ import classNames from "classnames"
 import styles from "./ShoppingCart.module.pcss"
 import { Link } from "react-router-dom"
 import { ArrowForward } from "../../../../assets/icons"
-import { Button, Typography, TypographySizes, TypographyWeights } from "../../../../components"
+import {
+  Button,
+  Container,
+  Typography,
+  TypographySizes,
+  TypographyWeights,
+} from "../../../../components"
 import { appPaths } from "../../../../constants"
 import { CartProduct } from "./CartProduct/CartProduct"
 
@@ -16,7 +22,7 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className, toNextSte
   const classes = classNames(styles.container, className)
 
   return (
-    <div className={classes}>
+    <Container className={classes}>
       <Typography className={styles.title} size={TypographySizes.extraLarge}>
         Shopping Cart
       </Typography>
@@ -47,6 +53,6 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className, toNextSte
           </Button>
         </div>
       </div>
-    </div>
+    </Container>
   )
 }

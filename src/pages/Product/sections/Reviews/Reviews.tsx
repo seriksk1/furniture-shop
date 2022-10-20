@@ -1,7 +1,14 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./Reviews.module.pcss"
-import { Button, ButtonGroup, ButtonTypes, Dropdown, Typography } from "../../../../components"
+import {
+  Button,
+  ButtonGroup,
+  ButtonTypes,
+  Container,
+  Dropdown,
+  Typography,
+} from "../../../../components"
 import { PlusIcon } from "../../../../assets/icons"
 import { MessageContainer } from "../../../../containers"
 import { questions, reviews } from "../../../../mocks"
@@ -35,7 +42,7 @@ export const Reviews: React.FC<ReviewsProps> = ({ className }) => {
   }, [messagesType])
 
   return (
-    <div className={classes}>
+    <Container className={classes}>
       <ButtonGroup className={styles.selection}>
         <Button
           className={messagesType === MessageTypes.review ? styles.selected : styles.notSelected}
@@ -75,6 +82,6 @@ export const Reviews: React.FC<ReviewsProps> = ({ className }) => {
           />
         ))}
       </div>
-    </div>
+    </Container>
   )
 }

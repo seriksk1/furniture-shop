@@ -6,6 +6,7 @@ import {
   Button,
   ButtonColors,
   Modal,
+  Container,
   PaymentForm,
   Typography,
   TypographyColors,
@@ -32,7 +33,7 @@ export const Payment: React.FC<PaymentProps> = ({ className, toPrevStep }) => {
   }
 
   return (
-    <div className={classes}>
+    <Container className={classes}>
       <Typography className={styles.title} size={TypographySizes.extraLarge}>
         Payment
       </Typography>
@@ -104,6 +105,6 @@ export const Payment: React.FC<PaymentProps> = ({ className, toPrevStep }) => {
           </Button>
         </Modal>
       )}
-    </div>
+    </Container>
   )
 }

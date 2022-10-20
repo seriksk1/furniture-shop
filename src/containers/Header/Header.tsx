@@ -7,9 +7,9 @@ import {
   SearchOutlined,
   ShoppingCartFilled,
 } from "../../assets/icons"
-import { Typography, TypographySizes } from "../../components"
+import { Container, Typography, TypographySizes } from "../../components"
 import { appPaths } from "../../constants"
-import { useMobileDevice } from "../../hooks"
+import { useWidthBreakpoint } from "../../hooks"
 import styles from "./Header.module.pcss"
 
 export interface NavLink {
@@ -28,10 +28,10 @@ const navigationLinks: NavLinkList = [
 ]
 
 export const Header: React.FC = () => {
-  const isMobileDevice = useMobileDevice()
+  const isMobileDevice = useWidthBreakpoint()
 
   return (
-    <div className={styles.header}>
+    <Container className={styles.header}>
       {isMobileDevice && <MenuIcon className={styles.menuIcon} />}
 
       <LogoIcon className={styles.logo} />
@@ -48,7 +48,7 @@ export const Header: React.FC = () => {
 
       <div className={styles.tools}>
         {!isMobileDevice && (
-          <Link to={appPaths.home}>
+          <Link to={appPaths.profile}>
             <AccountCircleOutlined className={styles.icon} />
           </Link>
         )}
@@ -56,11 +56,11 @@ export const Header: React.FC = () => {
           <ShoppingCartFilled className={styles.icon} />
         </Link>
         {!isMobileDevice && (
-          <Link to={appPaths.product}>
+          <Link to={appPaths.admin}>
             <SearchOutlined className={styles.icon} />
           </Link>
         )}
       </div>
-    </div>
+    </Container>
   )
 }

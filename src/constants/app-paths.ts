@@ -3,4 +3,6 @@ export const appPaths = {
   auth: "/auth",
   product: "/product",
   cart: "/cart",
+  profile: "/profile",
+  admin: "/admin",
 }

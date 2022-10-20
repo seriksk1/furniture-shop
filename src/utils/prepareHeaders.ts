@@ -8,7 +8,7 @@ export type PrepareHeadersFunction = (
 ) => MaybePromise<Headers>
 
 export const prepareHeadersWithToken: PrepareHeadersFunction = (headers, { getState }) => {
-  const token = (getState() as RootState).auth.token
+  const token = (getState() as RootState).user.auth.token
   if (token) {
     headers.set("authorization", `Bearer ${token}`)
   }

@@ -1,7 +1,13 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./SubscribeUs.module.pcss"
-import { Button, Typography, TypographyColors, TypographySizes } from "../../../../components"
+import {
+  Button,
+  Container,
+  Typography,
+  TypographyColors,
+  TypographySizes,
+} from "../../../../components"
 import { useInput } from "../../../../hooks"
 
 interface SubscribeUsProps {
@@ -13,7 +19,7 @@ export const SubscribeUs: React.FC<SubscribeUsProps> = ({ className }) => {
   const { value, onChange } = useInput("fomenko.alina@gmail.com")
 
   return (
-    <div className={classes}>
+    <Container className={classes}>
       <div className={styles.info}>
         <Typography className={styles.title} size={TypographySizes.extraLarge}>
           Get in Touch
@@ -40,6 +46,6 @@ export const SubscribeUs: React.FC<SubscribeUsProps> = ({ className }) => {
         </div>
         <Button className={styles.button}>Subscribe Us</Button>
       </div>
-    </div>
+    </Container>
   )
 }

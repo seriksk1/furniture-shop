@@ -1,0 +1,5 @@
+export * from "./MainPanel/MainPanel"
+export * from "./CategoriesPanel/CategoriesPanel"
+export * from "./ProductsPanel/ProductsPanel"
+export * from "./OrdersPanel/OrdersPanel"
+export * from "./RolesPanel/RolesPanel"
