@@ -1,6 +1,6 @@
 import * as yup from "yup"
 
-export const roleFormSchema = yup
+export const categoryFormSchema = yup
   .object({
     name: yup
       .string()

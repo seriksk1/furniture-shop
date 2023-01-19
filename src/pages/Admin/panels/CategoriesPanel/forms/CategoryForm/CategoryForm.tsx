@@ -1,28 +1,29 @@
 import React from "react"
-import styles from "./ProductForm.module.pcss"
+import styles from "./CategoryForm.module.pcss"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm, SubmitHandler } from "react-hook-form"
-import { productFormSchema } from "./product-form.validation"
-import { Button, ButtonSizes, InputField } from "../../../../../components/UI"
-import { useLoginMutation } from "../../../../../store/slices"
-interface IProductFormInput {
+import { categoryFormSchema } from "./category-form.validation"
+import { Button, ButtonSizes, InputField } from "../../../../../../components/UI"
+import { useCreateCategoryMutation } from "../../../../../../store/slices"
+interface ICategoryFormInput {
   name: string
   description: string
 }
 
-export const ProductForm: React.FC = () => {
-  const [loginRequest, { data, isLoading }] = useLoginMutation()
+export const CategoryForm: React.FC = () => {
+  const [createCategory, { data, isLoading }] = useCreateCategoryMutation()
   const {
     reset,
     register,
     handleSubmit,
     formState: { errors, isDirty },
-  } = useForm<IProductFormInput>({
-    resolver: yupResolver(productFormSchema),
+  } = useForm<ICategoryFormInput>({
+    resolver: yupResolver(categoryFormSchema),
   })
 
-  const onSubmit: SubmitHandler<IProductFormInput> = (data) => {
+  const onSubmit: SubmitHandler<ICategoryFormInput> = (data) => {
     console.log("form submit data:", data)
+    // createCategory(data)
     reset()
   }
 
@@ -34,18 +35,18 @@ export const ProductForm: React.FC = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <InputField
         className={styles.input}
-        placeholder="Product name"
+        placeholder="Category name"
         register={onRegister("name")}
         error={errors?.name?.message}
       />
       <InputField
         className={styles.input}
-        placeholder="Product description"
+        placeholder="Category description"
         register={onRegister("description")}
         error={errors?.description?.message}
       />
       <Button size={ButtonSizes.large} disabled={!isDirty || isLoading} fullWidth submit>
-        {isLoading ? "Loading..." : "Add product"}
+        {isLoading ? "Loading..." : "Add category"}
       </Button>
     </form>
   )
