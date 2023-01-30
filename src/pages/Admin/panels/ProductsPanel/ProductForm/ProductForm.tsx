@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { productFormSchema } from "./product-form.validation"
 import { Button, ButtonSizes, InputField } from "../../../../../components/UI"
-import { useLoginMutation } from "../../../../../store/slices"
+import { useLoginMutation } from "../../../../../store"
 interface IProductFormInput {
   name: string
   description: string

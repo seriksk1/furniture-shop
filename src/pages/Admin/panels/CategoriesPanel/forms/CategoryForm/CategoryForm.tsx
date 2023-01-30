@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { categoryFormSchema } from "./category-form.validation"
 import { Button, ButtonSizes, InputField } from "../../../../../../components/UI"
-import { useCreateCategoryMutation } from "../../../../../../store/slices"
+import { useCreateCategoryMutation } from "../../../../../../store"
 interface ICategoryFormInput {
   name: string
   description: string

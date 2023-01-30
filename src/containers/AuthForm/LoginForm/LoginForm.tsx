@@ -4,10 +4,10 @@ import { Link } from "react-router-dom"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { loginFormSchema } from "./login-form.validation"
-import { Button, ButtonSizes, InputField } from "../UI"
-import { login, useLoginMutation } from "../../store/slices"
 import { useDispatch } from "react-redux"
 import { toast } from "react-toastify"
+import { login, useLoginMutation } from "../../../store"
+import { Button, ButtonSizes, InputField } from "../../../components"
 
 interface ILoginFormInput {
   email: string

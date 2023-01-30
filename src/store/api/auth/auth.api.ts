@@ -1,37 +1,34 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { prepareHeadersWithToken } from "../../../../utils"
+import { baseApi, httpMethods } from "../base.api"
 
-export const authApi = createApi({
-  baseQuery: fetchBaseQuery({
-    baseUrl: `${process.env.API_URI}/auth`,
-    prepareHeaders: prepareHeadersWithToken,
-  }),
+const AUTH_URL = "/auth"
+
+export const authApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation<LoginResponse, LoginRequest>({
       query: (credentials) => ({
-        url: "login",
-        method: "POST",
+        url: `${AUTH_URL}/login`,
+        method: httpMethods.POST,
         body: credentials,
       }),
     }),
     registration: builder.mutation<RegisterResponse, RegisterRequest>({
       query: (credentials) => ({
-        url: "registration",
-        method: "POST",
+        url: `${AUTH_URL}/registration`,
+        method: httpMethods.POST,
         body: credentials,
       }),
     }),
     changePassword: builder.mutation<ChangePasswordResponse, ChangePasswordRequest>({
       query: (credentials) => ({
-        url: "change-password",
-        method: "POST",
+        url: `${AUTH_URL}/change-password`,
+        method: httpMethods.POST,
         body: credentials,
       }),
     }),
     forgotPassword: builder.mutation<ForgotPasswordResponse, ForgotPasswordRequest>({
       query: (credentials) => ({
-        url: "forgot-password",
-        method: "POST",
+        url: `${AUTH_URL}/forgot-password`,
+        method: httpMethods.POST,
         body: credentials,
       }),
     }),

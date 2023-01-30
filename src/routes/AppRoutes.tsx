@@ -11,8 +11,8 @@ export const AppRoutes = () => {
       <Route path={appPaths.auth} element={<Auth />} />
 
       <Route element={<DefaultLayout />}>
-        <Route path={appPaths.home} element={<Home />} />
-        <Route path={appPaths.product} element={<Product />} />
+        <Route index path={appPaths.home} element={<Home />} />
+        <Route path="/product/:id" element={<Product />} />
         <Route element={<ProtectedRoute />}>
           <Route path={appPaths.cart} element={<Cart />} />
         </Route>

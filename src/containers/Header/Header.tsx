@@ -22,7 +22,7 @@ export type NavLinkList = NavLink[]
 const navigationLinks: NavLinkList = [
   { name: "Home", path: appPaths.home },
   { name: "About Us", path: appPaths.home },
-  { name: "Furniture", path: appPaths.product },
+  { name: "Furniture", path: "product" },
   { name: "Blog", path: appPaths.home },
   { name: "Contact Us", path: appPaths.home },
 ]
@@ -48,6 +48,11 @@ export const Header: React.FC = () => {
 
       <div className={styles.tools}>
         {!isMobileDevice && (
+          <Link to={appPaths.admin}>
+            <SearchOutlined className={styles.icon} />
+          </Link>
+        )}
+        {!isMobileDevice && (
           <Link to={appPaths.profile}>
             <AccountCircleOutlined className={styles.icon} />
           </Link>
@@ -55,11 +60,6 @@ export const Header: React.FC = () => {
         <Link to={appPaths.cart}>
           <ShoppingCartFilled className={styles.icon} />
         </Link>
-        {!isMobileDevice && (
-          <Link to={appPaths.admin}>
-            <SearchOutlined className={styles.icon} />
-          </Link>
-        )}
       </div>
     </Container>
   )

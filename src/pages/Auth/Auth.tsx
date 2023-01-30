@@ -5,7 +5,7 @@ import { LogoIcon } from "../../assets/icons"
 import { appPaths } from "../../constants"
 import { AuthForm, CustomSlider } from "../../containers"
 import { useWidthBreakpoint } from "../../hooks"
-import { selectAuth } from "../../store/slices"
+import { selectAuth } from "../../store"
 import styles from "./Auth.module.pcss"
 
 const authBackgroundImage1 = require("../../assets/images/auth/bg-1.png")

@@ -44,9 +44,7 @@ const cssLoaders = (loader) => {
 module.exports = {
   mode: isProduction ? "production" : isDevelopment && "development",
   context: path.resolve(__dirname, "src"),
-  entry: {
-    main: ["@babel/polyfill", "./index.tsx"],
-  },
+  entry: "./index.tsx",
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: isProduction ? "static/js/[name].[contenthash].js" : "static/js/[name].js",

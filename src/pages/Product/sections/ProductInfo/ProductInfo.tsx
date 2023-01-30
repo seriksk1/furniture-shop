@@ -1,4 +1,5 @@
 import React from "react"
+import { useDispatch } from "react-redux"
 import classNames from "classnames"
 import styles from "./ProductInfo.module.pcss"
 import productImage from "../../../../assets/images/product/1.png"
@@ -13,15 +14,24 @@ import {
   TypographySizes,
   TypographyWeights,
 } from "../../../../components"
+import { Details } from "./Details/Details"
 import { ArrowForward } from "../../../../assets/icons"
+import { addToCart } from "../../../../store"
 
 interface ProductInfoProps {
   className?: string
+  product: Product
 }
 
-export const ProductInfo: React.FC<ProductInfoProps> = ({ className }) => {
-  const [counterValue, setCounterValue] = React.useState(1)
+export const ProductInfo: React.FC<ProductInfoProps> = ({ className, product }) => {
+  const dispatch = useDispatch()
   const classes = classNames(styles.container, className)
+  const [quantity, setQuantity] = React.useState(1)
+  const price = product.price
+
+  const onAddToCart = () => {
+    dispatch(addToCart(product))
+  }
 
   return (
     <Container className={classes}>
@@ -59,47 +69,26 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className }) => {
               size={TypographySizes.large}
               weight={TypographyWeights.medium}
             >
-              $210.00
+              ${price}
             </Typography>
           </div>
           <div className={styles.quantity}>
             <Typography className={styles.label} size={TypographySizes.medium}>
               Quantity
             </Typography>
-            <Counter className={styles.counter} value={counterValue} setValue={setCounterValue} />
+            <Counter className={styles.counter} value={quantity} setValue={setQuantity} />
           </div>
         </div>
 
         <div className={styles.details}>
-          <div className={styles.label}>Details</div>
-          <div className={styles.list}>
-            <div className={styles.detail}>
-              <Typography className={styles.text}>Size:</Typography>
-              <Typography className={styles.text}>{"72'' H x 31.5'' W"}</Typography>
-            </div>
-            <div className={styles.detail}>
-              <Typography className={styles.text}>Seat Height:</Typography>
-              <Typography className={styles.text}>{"25.5''"}</Typography>
-            </div>
-            <div className={styles.detail}>
-              <Typography className={styles.text}>Materials:</Typography>
-              <Typography className={styles.text}>
-                Playwood, Semi Aniline Italian Leather
-              </Typography>
-            </div>
-            <div className={styles.detail}>
-              <Typography className={styles.text}>Color:</Typography>
-              <Typography className={styles.text}>Gray</Typography>
-            </div>
-            <div className={styles.detail}>
-              <Typography className={styles.text}>Weight:</Typography>
-              <Typography className={styles.text}>180Ibs</Typography>
-            </div>
-          </div>
+          <Typography className={styles.label} size={TypographySizes.medium}>
+            Details
+          </Typography>
+          <Details className={styles.list} />
         </div>
 
         <div className={styles.bottom}>
-          <Button>
+          <Button onClick={onAddToCart}>
             <span>Add to cart</span>
             <ArrowForward />
           </Button>
@@ -112,7 +101,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className }) => {
               size={TypographySizes.large}
               weight={TypographyWeights.medium}
             >
-              $210.00
+              ${price}
             </Typography>
           </div>
         </div>

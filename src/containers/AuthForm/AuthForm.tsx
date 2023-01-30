@@ -1,8 +1,9 @@
 import React from "react"
-import { Button, ButtonGroup, ButtonTypes } from "../../components/UI"
-import { LoginForm, RegisterForm } from "../../components"
-import styles from "./AuthForm.module.pcss"
 import classNames from "classnames"
+import styles from "./AuthForm.module.pcss"
+import { Button, ButtonGroup, ButtonTypes } from "../../components/UI"
+import { RegisterForm } from "./RegisterForm/RegisterForm"
+import { LoginForm } from "./LoginForm/LoginForm"
 
 type AuthType = "login" | "register"
 

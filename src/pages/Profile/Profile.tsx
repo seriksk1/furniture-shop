@@ -2,7 +2,7 @@ import React from "react"
 import styles from "./Profile.module.pcss"
 import { Button, ButtonTypes } from "../../components"
 import { useDispatch } from "react-redux"
-import { logout } from "../../store/slices"
+import { logout } from "../../store"
 import { toast } from "react-toastify"
 
 export const Profile: React.FC = () => {

@@ -1,44 +1,41 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { prepareHeadersWithToken } from "../../../../utils"
+import { baseApi, httpMethods } from "../../base.api"
 
-export const categoriesApi = createApi({
-  baseQuery: fetchBaseQuery({
-    baseUrl: `${process.env.API_URI}/api`,
-    prepareHeaders: prepareHeadersWithToken,
-  }),
+const CATEGORIES_URL = "/api/categories"
+
+export const categoriesApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     createCategory: builder.mutation<CategoryCreateResponse, CategoryCreateRequest>({
       query: (body) => ({
-        url: "categories",
-        method: "POST",
+        url: CATEGORIES_URL,
+        method: httpMethods.POST,
         body: body,
       }),
     }),
     updateCategory: builder.mutation<CategoryUpdateResponse, CategoryUpdateRequest>({
       query: (body) => ({
-        url: "categories",
-        method: "PUT",
+        url: CATEGORIES_URL,
+        method: httpMethods.PUT,
         body: body,
       }),
     }),
     deleteCategory: builder.mutation<CategoryDeleteResponse, CategoryDeleteRequest>({
       query: (params) => ({
-        url: "categories",
-        method: "DELETE",
+        url: CATEGORIES_URL,
+        method: httpMethods.DELETE,
         params: params,
       }),
     }),
     getCategory: builder.query<CategoryGetResponse, CategoryGetRequest>({
       query: (params) => ({
-        url: "categories",
-        method: "GET",
+        url: CATEGORIES_URL,
+        method: httpMethods.GET,
         params: params,
       }),
     }),
     getCategories: builder.query<CategoriesGetResponse, CategoriesGetRequest>({
       query: () => ({
-        url: "categories",
-        method: "GET",
+        url: CATEGORIES_URL,
+        method: httpMethods.GET,
       }),
     }),
   }),

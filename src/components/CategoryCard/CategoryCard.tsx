@@ -35,7 +35,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ className, category 
           weight={TypographyWeights.medium}
           color={TypographyColors.gray}
         >
-          <Link to={appPaths.product}>See collection</Link>
+          <Link to={"product"}>See collection</Link>
         </Typography>
       </div>
       <img className={styles.image} src={image} alt="" />

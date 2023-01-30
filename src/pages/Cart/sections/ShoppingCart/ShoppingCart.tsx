@@ -32,7 +32,7 @@ export const ShoppingCart: React.FC<ShoppingCartProps> = ({ className, toNextSte
       </div>
       <div className={styles.bottom}>
         <Typography className={styles.back} size={TypographySizes.medium}>
-          <Link to={appPaths.product}>
+          <Link to={"product"}>
             <ArrowForward className={styles.icon} />
             <span>Back to shop</span>
           </Link>

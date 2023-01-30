@@ -1,8 +1,11 @@
 export const appPaths = {
   home: "/",
-  auth: "/auth",
-  product: "/product",
-  cart: "/cart",
-  profile: "/profile",
-  admin: "/admin",
+  auth: "auth",
+  product: {
+    main: "product",
+    id: "product/:productId",
+  },
+  cart: "cart/:cartId",
+  profile: "profile",
+  admin: "admin",
 }

@@ -1,44 +1,41 @@
-import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { prepareHeadersWithToken } from "../../../../utils"
+import { baseApi, httpMethods } from "../../base.api"
 
-export const rolesApi = createApi({
-  baseQuery: fetchBaseQuery({
-    baseUrl: `${process.env.API_URI}/api`,
-    prepareHeaders: prepareHeadersWithToken,
-  }),
+const ROLES_URL = "/api/roles"
+
+export const rolesApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
     createRole: builder.mutation<RoleCreateResponse, RoleCreateRequest>({
       query: (body) => ({
-        url: "roles",
-        method: "POST",
+        url: ROLES_URL,
+        method: httpMethods.POST,
         body: body,
       }),
     }),
     updateRole: builder.mutation<RoleUpdateResponse, RoleUpdateRequest>({
       query: (body) => ({
-        url: "roles",
-        method: "PUT",
+        url: ROLES_URL,
+        method: httpMethods.PUT,
         body: body,
       }),
     }),
     deleteRole: builder.mutation<RoleDeleteResponse, RoleDeleteRequest>({
       query: (params) => ({
-        url: "roles",
-        method: "DELETE",
+        url: ROLES_URL,
+        method: httpMethods.DELETE,
         params: params,
       }),
     }),
     getRole: builder.query<RoleGetResponse, RoleGetRequest>({
       query: (params) => ({
-        url: "roles",
-        method: "GET",
+        url: ROLES_URL,
+        method: httpMethods.GET,
         params: params,
       }),
     }),
     getRoles: builder.query<RolesGetResponse, RolesGetRequest>({
       query: () => ({
-        url: "roles",
-        method: "GET",
+        url: ROLES_URL,
+        method: httpMethods.GET,
       }),
     }),
   }),

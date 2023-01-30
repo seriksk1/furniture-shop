@@ -1,16 +1,17 @@
 import React from "react"
 import styles from "./Product.module.pcss"
-import { Breadcrumbs } from "../../components"
-import { breadcrumpsProduct } from "../../mocks"
-import { ProductInfo, Reviews, SimilarProducts } from "./sections"
 
 export const Product: React.FC = () => {
+  // const { id } = useParams()
+  // const { data: product } = useGetProductQuery(id)
+
   return (
     <div className={styles.container}>
-      <Breadcrumbs list={breadcrumpsProduct} />
-      <ProductInfo className={styles.product} />
-      <SimilarProducts className={styles.similar} />
-      <Reviews className={styles.reviews} />
+      wtf
+      {/* <Breadcrumbs list={breadcrumpsProduct} /> */}
+      {/* {false && <ProductInfo className={styles.product} product={false} />} */}
+      {/* <SimilarProducts className={styles.similar} /> */}
+      {/* <Reviews className={styles.reviews} /> */}
     </div>
   )
 }

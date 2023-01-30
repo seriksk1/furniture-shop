@@ -1,8 +1,13 @@
 import React from "react"
+import styles from "./RegisterForm.module.pcss"
 import { Link } from "react-router-dom"
 import { yupResolver } from "@hookform/resolvers/yup"
 import { useForm, SubmitHandler } from "react-hook-form"
 import { registerFormSchema } from "./register-form.validation"
+import { useDispatch } from "react-redux"
+import { toast } from "react-toastify"
+import { useToggle } from "../../../hooks"
+import { registration, useRegistrationMutation } from "../../../store"
 import {
   Button,
   ButtonSizes,
@@ -11,13 +16,8 @@ import {
   Typography,
   TypographySizes,
   TypographyWeights,
-} from "../UI"
-import styles from "./RegisterForm.module.pcss"
-import { useToggle } from "../../hooks"
-import { appPaths } from "../../constants"
-import { registration, useRegistrationMutation } from "../../store/slices"
-import { useDispatch } from "react-redux"
-import { toast } from "react-toastify"
+} from "../../../components"
+import { appPaths } from "../../../constants"
 
 interface IRegisterFormInput {
   email: string
@@ -26,8 +26,7 @@ interface IRegisterFormInput {
 }
 
 export const RegisterForm: React.FC = () => {
-  const [registerRequest, { data: registerResponse, isLoading, isError, isSuccess }] =
-    useRegistrationMutation()
+  const [registerRequest, { data: registerResponse }] = useRegistrationMutation()
   const { active: termsChecked, onToggle: onTermsToggle } = useToggle(false)
   const {
     register,

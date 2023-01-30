@@ -20,20 +20,39 @@ interface Props {
 
 export const CategoriesPanel: React.FC<Props> = ({ className }) => {
   const classes = classNames(styles.container, className)
-  const { active: modalActive, onToggle } = useToggle(false)
+  const { active: isAddModalActive, onToggle: onAddModalToggle } = useToggle(false)
+  const { active: isEditModalActive, onToggle: onEditModalToggle } = useToggle(false)
 
   return (
     <div className={classes}>
-      <CategoryList className={styles.list} categories={categories} />
+      <CategoryList
+        className={styles.list}
+        categories={categories}
+        onCategoryCreate={onAddModalToggle}
+        onCategoryEdit={onEditModalToggle}
+      />
 
-      {modalActive && (
-        <Modal className={styles.modal} onClose={onToggle}>
+      {isAddModalActive && (
+        <Modal className={styles.modal} onClose={onAddModalToggle}>
           <Typography
             className={styles.modalTitle}
             size={TypographySizes.large}
             color={TypographyColors.dark}
           >
             Create category
+          </Typography>
+          <CategoryForm />
+        </Modal>
+      )}
+
+      {isEditModalActive && (
+        <Modal className={styles.modal} onClose={onEditModalToggle}>
+          <Typography
+            className={styles.modalTitle}
+            size={TypographySizes.large}
+            color={TypographyColors.dark}
+          >
+            Edit category
           </Typography>
           <CategoryForm />
         </Modal>
