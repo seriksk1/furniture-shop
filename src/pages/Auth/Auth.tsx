@@ -8,8 +8,8 @@ import { useWidthBreakpoint } from "../../hooks"
 import { selectAuth } from "../../store"
 import styles from "./Auth.module.pcss"
 
-const authBackgroundImage1 = require("../../assets/images/auth/bg-1.png")
-const authBackgroundImage2 = require("../../assets/images/auth/bg-2.png")
+import authBackgroundImage1 from "../../assets/images/auth/bg-1.png"
+import authBackgroundImage2 from "../../assets/images/auth/bg-2.png"
 
 const sliderImages = [authBackgroundImage1, authBackgroundImage2, authBackgroundImage1]
 

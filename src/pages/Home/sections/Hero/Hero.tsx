@@ -12,9 +12,8 @@ import {
   TypographyWeights,
 } from "../../../../components"
 import { ArrowForward } from "../../../../assets/icons"
-
-const heroImage = require("../../../../assets/images/landing/hero-image.png")
-const heroDecoration = require("../../../../assets/images/landing/hero-decoration.png")
+import heroImage from "../../../../assets/images/landing/hero-image.png"
+import heroDecoration from "../../../../assets/images/landing/hero-decoration.png"
 
 interface HeroProps {
   className?: string

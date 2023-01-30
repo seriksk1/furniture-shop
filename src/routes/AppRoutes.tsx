@@ -9,7 +9,6 @@ export const AppRoutes = () => {
   return (
     <Routes>
       <Route path={appPaths.auth} element={<Auth />} />
-
       <Route element={<DefaultLayout />}>
         <Route index path={appPaths.home} element={<Home />} />
         <Route path="/product/:id" element={<Product />} />
@@ -23,7 +22,6 @@ export const AppRoutes = () => {
           <Route path={appPaths.admin} element={<Admin />} />
         </Route>
       </Route>
-
       <Route path="*" element={<NoMatch />} />
     </Routes>
   )
