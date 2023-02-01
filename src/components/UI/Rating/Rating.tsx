@@ -12,6 +12,10 @@ export const Rating: React.FC<RatingProps> = ({ stars, className }) => {
   const classes = classNames(styles.rating, className)
   const list = new Array(stars).fill("")
 
+  if (!stars) {
+    return <div className={classes}>No rating</div>
+  }
+
   return (
     <div className={classes}>
       {list.map((_, i) => (

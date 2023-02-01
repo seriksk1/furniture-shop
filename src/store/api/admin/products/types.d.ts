@@ -3,7 +3,7 @@ interface Product {
   image: string
   name: string
   stars: RatingType
-  price: string
+  price: number
   discountPrice?: string
   isNew?: boolean
 }
@@ -25,5 +25,5 @@ interface ProductsGetRequest {}
 interface ProductCreateResponse {}
 interface ProductUpdateResponse {}
 interface ProductDeleteResponse {}
-interface ProductGetResponse {}
+interface ProductGetResponse extends Product {}
 interface ProductsGetResponse {}

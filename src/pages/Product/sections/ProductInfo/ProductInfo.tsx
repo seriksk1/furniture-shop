@@ -27,7 +27,8 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className, product }) 
   const dispatch = useDispatch()
   const classes = classNames(styles.container, className)
   const [quantity, setQuantity] = React.useState(1)
-  const price = product.price
+
+  const { id, image, name, stars, discountPrice, isNew, price } = product
 
   const onAddToCart = () => {
     dispatch(addToCart(product))
@@ -35,7 +36,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className, product }) 
 
   return (
     <Container className={classes}>
-      <img className={styles.image} src={productImage} alt="product" />
+      <img className={styles.image} src={image || productImage} alt="product" />
       <div className={styles.info}>
         <Typography
           className={styles.collection}
@@ -45,11 +46,11 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className, product }) 
           Collection Bed
         </Typography>
         <Typography className={styles.name} size={TypographySizes.extraLarge}>
-          Pohlman Upholstered Low Profile Platform Bed
+          {name}
         </Typography>
 
         <div className={styles.row}>
-          <Rating className={styles.stars} stars={5} />
+          <Rating className={styles.stars} stars={stars} />
           <Typography className={styles.reviews}>5 reviews</Typography>
         </div>
 
@@ -101,7 +102,7 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className, product }) 
               size={TypographySizes.large}
               weight={TypographyWeights.medium}
             >
-              ${price}
+              ${quantity * price}
             </Typography>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { baseApi, httpMethods } from "../../base.api"
 
-const ORDERS_URL = "/api/orders"
+const ORDERS_URL = "/orders"
 
 export const ordersApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

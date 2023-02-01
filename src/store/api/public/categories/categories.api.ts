@@ -1,6 +1,6 @@
 import { baseApi, httpMethods } from "../../base.api"
 
-const CATEGORIES_URL = "/api/categories"
+const CATEGORIES_URL = "/categories"
 
 export const publicCategoriesApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

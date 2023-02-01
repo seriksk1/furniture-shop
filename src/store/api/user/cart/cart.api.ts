@@ -1,6 +1,6 @@
 import { baseApi } from "../../base.api"
 
-const CART_URL = "/api/cart"
+const CART_URL = "/cart"
 
 export const cartApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({}),

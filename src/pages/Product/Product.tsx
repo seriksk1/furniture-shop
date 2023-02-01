@@ -1,17 +1,21 @@
 import React from "react"
 import styles from "./Product.module.pcss"
+import { Breadcrumbs } from "../../components"
+import { breadcrumpsProduct } from "../../mocks"
+import { ProductInfo, Reviews, SimilarProducts } from "./sections"
+import { useParams } from "react-router"
+import { useGetProductQuery } from "../../store"
 
 export const Product: React.FC = () => {
-  // const { id } = useParams()
-  // const { data: product } = useGetProductQuery(id)
+  const { productId } = useParams()
+  const { data: product, isLoading } = useGetProductQuery(Number(productId), { skip: !productId })
 
   return (
     <div className={styles.container}>
-      wtf
-      {/* <Breadcrumbs list={breadcrumpsProduct} /> */}
-      {/* {false && <ProductInfo className={styles.product} product={false} />} */}
-      {/* <SimilarProducts className={styles.similar} /> */}
-      {/* <Reviews className={styles.reviews} /> */}
+      <Breadcrumbs list={breadcrumpsProduct} />
+      {product && <ProductInfo className={styles.product} product={product} />}
+      <SimilarProducts className={styles.similar} />
+      <Reviews className={styles.reviews} />
     </div>
   )
 }

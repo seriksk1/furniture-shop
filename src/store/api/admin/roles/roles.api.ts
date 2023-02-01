@@ -1,6 +1,6 @@
 import { baseApi, httpMethods } from "../../base.api"
 
-const ROLES_URL = "/api/roles"
+const ROLES_URL = "/roles"
 
 export const rolesApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({

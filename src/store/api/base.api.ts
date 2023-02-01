@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { APP_URI } from "../../config"
+import { API_URI } from "../../config"
 
 export const httpMethods = {
   GET: "GET",
@@ -11,7 +11,7 @@ export const httpMethods = {
 
 export const baseApi = createApi({
   baseQuery: fetchBaseQuery({
-    baseUrl: APP_URI,
+    baseUrl: API_URI,
   }),
   endpoints: () => ({}),
 })

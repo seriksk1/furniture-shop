@@ -1,6 +1,6 @@
 import { baseApi, httpMethods } from "../../base.api"
 
-const PRODUCTS_URL = "/api/products"
+const PRODUCTS_URL = "/products"
 
 export const productsApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -20,24 +20,21 @@ export const productsApi = baseApi.injectEndpoints({
       }),
     }),
     deleteProduct: builder.mutation<ProductDeleteResponse, ProductDeleteRequest>({
-      query: (params) => ({
-        url: PRODUCTS_URL,
+      query: (id) => ({
+        url: PRODUCTS_URL + `/${id}`,
         method: httpMethods.DELETE,
-        params: params,
       }),
     }),
     getProduct: builder.query<ProductGetResponse, ProductGetRequest>({
-      query: (params) => ({
-        url: PRODUCTS_URL,
+      query: (id) => ({
+        url: PRODUCTS_URL + `/${id}`,
         method: httpMethods.GET,
-        params: params,
       }),
     }),
     getProducts: builder.query<ProductsGetResponse, ProductsGetRequest>({
-      query: (params) => ({
+      query: () => ({
         url: PRODUCTS_URL,
         method: httpMethods.GET,
-        params: params,
       }),
     }),
   }),
