@@ -17,6 +17,7 @@ interface MessageCardProps {
   messageType?: MessageType
   message: ProductMessage
   answers?: AnswerMessage[]
+  answersOpen?: boolean
   onAnswersOpen?: () => void
 }
 
@@ -25,10 +26,16 @@ export const MessageCard: React.FC<MessageCardProps> = ({
   messageType = MessageTypes.review,
   message,
   answers,
+  answersOpen,
   onAnswersOpen,
 }) => {
   const { avatar, username, date, text } = message
   const classes = classNames(styles.card, className)
+
+  const [isQuestion, isReview] = [
+    messageType === MessageTypes.question,
+    messageType === MessageTypes.review,
+  ]
 
   return (
     <div className={classes}>
@@ -48,15 +55,15 @@ export const MessageCard: React.FC<MessageCardProps> = ({
             </Typography>
           </div>
         </div>
-        {messageType === MessageTypes.review && <Rating stars={5} />}
+        {isReview && <Rating stars={5} />}
       </div>
+
       <div className={styles.bottom}>
         <Typography className={styles.message}>{text}</Typography>
-
-        {messageType === MessageTypes.question && (
+        {isQuestion && (
           <div className={styles.answers}>
             <AnswerIcon className={styles.icon} />
-            {answers && Boolean(answers.length) && (
+            {answers?.length ? (
               <Typography
                 className={styles.amount}
                 size={TypographySizes.extraSmall}
@@ -65,10 +72,16 @@ export const MessageCard: React.FC<MessageCardProps> = ({
               >
                 {answers.length} answers
               </Typography>
-            )}
+            ) : null}
           </div>
         )}
       </div>
+
+      {isQuestion && (
+        <div className={styles.answering}>
+          <input type="text" placeholder="Please, write your answer..." />
+        </div>
+      )}
     </div>
   )
 }

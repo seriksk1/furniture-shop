@@ -10,7 +10,7 @@ import {
 
 export * from "./enums"
 
-interface TypographyProps {
+export interface TypographyProps {
   className?: string
   size?: TypographySizes
   color?: TypographyColors

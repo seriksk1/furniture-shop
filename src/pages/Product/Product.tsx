@@ -8,7 +8,7 @@ import { useGetProductQuery } from "../../store"
 
 export const Product: React.FC = () => {
   const { productId } = useParams()
-  const { data: product, isLoading } = useGetProductQuery(Number(productId), { skip: !productId })
+  const { data: product } = useGetProductQuery(Number(productId), { skip: !productId })
 
   return (
     <div className={styles.container}>

@@ -2,12 +2,13 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import classNames from "classnames"
 import styles from "./ProductInfo.module.pcss"
-import productImage from "../../../../assets/images/product/1.png"
 import {
   Accordion,
   Button,
   Container,
   Counter,
+  Image,
+  Price,
   Rating,
   Typography,
   TypographyColors,
@@ -28,15 +29,15 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className, product }) 
   const classes = classNames(styles.container, className)
   const [quantity, setQuantity] = React.useState(1)
 
-  const { id, image, name, stars, discountPrice, isNew, price } = product
+  const { id, image, name, description, stars, discountPrice, isNew, price } = product
 
   const onAddToCart = () => {
-    dispatch(addToCart(product))
+    dispatch(addToCart({ product, quantity }))
   }
 
   return (
     <Container className={classes}>
-      <img className={styles.image} src={image || productImage} alt="product" />
+      <Image className={styles.image} src={image} alt="product" />
       <div className={styles.info}>
         <Typography
           className={styles.collection}
@@ -54,24 +55,19 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className, product }) 
           <Typography className={styles.reviews}>5 reviews</Typography>
         </div>
 
-        <Typography className={styles.description}>
-          This platform elevates your bedroom with a sleek, modern look. It&apos;s crafted from
-          solid wood with a black finish contemporary profile. The panel headboard strikes a
-          rectangular silhouette, and it&apos;s upholstered and stuffed with polyester.
-        </Typography>
+        <Typography className={styles.description}>{description || "No description"}</Typography>
 
         <div className={styles.amount}>
           <div className={styles.price}>
             <Typography className={styles.label} size={TypographySizes.medium}>
               Price
             </Typography>
-            <Typography
+            <Price
               className={styles.value}
               size={TypographySizes.large}
               weight={TypographyWeights.medium}
-            >
-              ${price}
-            </Typography>
+              price={price}
+            />
           </div>
           <div className={styles.quantity}>
             <Typography className={styles.label} size={TypographySizes.medium}>
@@ -97,13 +93,12 @@ export const ProductInfo: React.FC<ProductInfoProps> = ({ className, product }) 
             <Typography className={styles.label} size={TypographySizes.medium}>
               Total Price:
             </Typography>
-            <Typography
+            <Price
               className={styles.value}
               size={TypographySizes.large}
               weight={TypographyWeights.medium}
-            >
-              ${quantity * price}
-            </Typography>
+              price={quantity * price}
+            />
           </div>
         </div>
 

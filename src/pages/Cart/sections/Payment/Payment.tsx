@@ -12,6 +12,7 @@ import {
   TypographyColors,
   TypographySizes,
   TypographyWeights,
+  Price,
 } from "../../../../components"
 import { useNavigate } from "react-router-dom"
 import { appPaths } from "../../../../constants"
@@ -46,7 +47,7 @@ export const Payment: React.FC<PaymentProps> = ({ className, toPrevStep }) => {
           <div className={styles.costs}>
             <div className={styles.row}>
               <Typography>Item Cost</Typography>
-              <Typography>$420.00</Typography>
+              <Price price={420} />
             </div>
             <div className={styles.row}>
               <Typography>Delivery</Typography>
@@ -54,18 +55,16 @@ export const Payment: React.FC<PaymentProps> = ({ className, toPrevStep }) => {
             </div>
             <div className={styles.row}>
               <Typography>Discount</Typography>
-              <Typography>$0</Typography>
+              <Price price={0} />
             </div>
             <div className={styles.row}>
               <Typography>Promocode</Typography>
-              <Typography>$0</Typography>
+              <Price price={0} />
             </div>
           </div>
           <div className={styles.total}>
             <Typography size={TypographySizes.medium}>Total Price:</Typography>
-            <Typography size={TypographySizes.large} weight={TypographyWeights.medium}>
-              $420.00
-            </Typography>
+            <Price size={TypographySizes.large} weight={TypographyWeights.medium} price={420} />
           </div>
           <div className={styles.submit}>
             <Button onClick={onModalOpen}>

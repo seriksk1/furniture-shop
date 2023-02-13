@@ -43,30 +43,30 @@ export const MessageContainer: React.FC<MessageContainerProps> = ({
       <MessageCard
         className={styles.card}
         message={message}
+        answers={answers}
+        answersOpen={answersOpen}
         messageType={messageType}
         onAnswersOpen={onAnswersOpen}
-        answers={answers}
       />
 
       {answersOpen && (
-        <div className={styles.answers}>
-          {answers?.map((answer, i) => {
-            return (
-              <div key={i} className={styles.wrap}>
-                {i === 0 && <ReplyIcon className={styles.reply} />}
-                <MessageCard className={styles.answer} message={answer} messageType="answer" />
-              </div>
-            )
-          })}
-        </div>
-      )}
-
-      {answersOpen && (
-        <div className={styles.hide}>
-          <Button className={styles.button} onClick={onAnswersHide}>
-            Hide Answers
-          </Button>
-        </div>
+        <>
+          <div className={styles.answers}>
+            {answers?.map((answer, i) => {
+              return (
+                <div key={i} className={styles.wrap}>
+                  {i === 0 && <ReplyIcon className={styles.reply} />}
+                  <MessageCard className={styles.answer} message={answer} messageType="answer" />
+                </div>
+              )
+            })}
+          </div>
+          <div className={styles.hide}>
+            <Button className={styles.button} onClick={onAnswersHide}>
+              Hide Answers
+            </Button>
+          </div>
+        </>
       )}
     </div>
   )

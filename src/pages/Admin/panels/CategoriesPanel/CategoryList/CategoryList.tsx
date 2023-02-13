@@ -6,6 +6,7 @@ import {
   Button,
   ButtonColors,
   ButtonSizes,
+  Image,
   Typography,
   TypographySizes,
 } from "../../../../../components"
@@ -28,7 +29,7 @@ const CategoryItem: React.FC<CategoryItemProps> = ({ category, onCategoryEdit })
   return (
     <div className={styles.category}>
       <div className={styles.info}>
-        <img className={styles.image} src={image} />
+        <Image className={styles.image} src={image} />
         <Typography className={styles.name} size={TypographySizes.medium}>
           {name}
         </Typography>

@@ -10,6 +10,7 @@ import styles from "./Auth.module.pcss"
 
 import authBackgroundImage1 from "../../assets/images/auth/bg-1.png"
 import authBackgroundImage2 from "../../assets/images/auth/bg-2.png"
+import { Image } from "../../components"
 
 const sliderImages = [authBackgroundImage1, authBackgroundImage2, authBackgroundImage1]
 
@@ -38,7 +39,7 @@ export const Auth: React.FC = () => {
           autoplaySpeed={7000}
         >
           {sliderImages.map((image, i) => (
-            <img key={i} className={styles.image} src={image} />
+            <Image key={i} className={styles.image} src={image} />
           ))}
         </CustomSlider>
       </div>

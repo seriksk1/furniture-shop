@@ -2,9 +2,10 @@ interface Product {
   id: number
   image: string
   name: string
+  description?: string
   stars: RatingType
   price: number
-  discountPrice?: string
+  discountPrice?: number
   isNew?: boolean
 }
 

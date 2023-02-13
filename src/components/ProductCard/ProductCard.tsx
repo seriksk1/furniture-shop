@@ -2,6 +2,8 @@ import React from "react"
 import classNames from "classnames"
 import styles from "./ProductCard.module.pcss"
 import {
+  Image,
+  Price,
   Rating,
   Tip,
   TipPositionX,
@@ -24,19 +26,18 @@ export const ProductCard: React.FC<ProductCardProps> = ({ className, product, ti
 
   return (
     <div className={classes}>
-      <img className={styles.image} src={image} />
+      <Image className={styles.image} src={image} />
       <Rating className={styles.stars} stars={stars} />
       <Typography className={styles.name} size={TypographySizes.medium}>
         {name}
       </Typography>
-      <Typography
+      <Price
         className={styles.price}
         size={TypographySizes.medium}
         weight={TypographyWeights.semibold}
-      >
-        {discountPrice ? <span className={styles.priceBefore}>{price}</span> : price}
-        {discountPrice && <span className={styles.priceAfter}>{discountPrice}</span>}
-      </Typography>
+        discountPrice={discountPrice}
+        price={price}
+      />
       {discountPrice && <Tip type={TipTypes.sale} positionX={tipPositionX} />}
       {isNew && <Tip type={TipTypes.new} positionX={tipPositionX} />}
     </div>

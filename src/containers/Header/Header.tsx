@@ -1,5 +1,5 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { generatePath, Link } from "react-router-dom"
 import {
   AccountCircleOutlined,
   LogoIcon,
@@ -22,7 +22,7 @@ export type NavLinkList = NavLink[]
 const navigationLinks: NavLinkList = [
   { name: "Home", path: appPaths.home },
   { name: "About Us", path: appPaths.home },
-  { name: "Furniture", path: "product" },
+  { name: "Furniture", path: appPaths.product.dynamic(1) },
   { name: "Blog", path: appPaths.home },
   { name: "Contact Us", path: appPaths.home },
 ]

@@ -1,8 +1,8 @@
 import React from "react"
 import classNames from "classnames"
 import styles from "./CategoryCard.module.pcss"
-import { Typography, TypographyColors, TypographySizes, TypographyWeights } from "../UI"
-import { Link } from "react-router-dom"
+import { Image, Typography, TypographyColors, TypographySizes, TypographyWeights } from "../UI"
+import { generatePath, Link } from "react-router-dom"
 import { appPaths } from "../../constants"
 
 interface CategoryCardProps {
@@ -35,10 +35,10 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ className, category 
           weight={TypographyWeights.medium}
           color={TypographyColors.gray}
         >
-          <Link to={"product"}>See collection</Link>
+          <Link to={appPaths.product.dynamic(1)}>See collection</Link>
         </Typography>
       </div>
-      <img className={styles.image} src={image} alt="" />
+      <Image className={styles.image} src={image} alt="" />
     </div>
   )
 }

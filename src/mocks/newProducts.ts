@@ -10,7 +10,7 @@ export const newProducts: ProductList = [
     image: newProduct5,
     stars: 5,
     name: "Marilee Platform Bed",
-    price: "237$",
+    price: 237,
     isNew: true,
   },
   {
@@ -18,7 +18,7 @@ export const newProducts: ProductList = [
     image: newProduct4,
     stars: 4,
     name: "Middlebury Standard Bed",
-    price: "237$",
+    price: 237,
     isNew: true,
   },
   {
@@ -26,7 +26,7 @@ export const newProducts: ProductList = [
     image: newProduct3,
     stars: 3,
     name: "Riya Low Profile Bed",
-    price: "237$",
+    price: 237,
     isNew: true,
   },
   {
@@ -34,7 +34,7 @@ export const newProducts: ProductList = [
     image: newProduct1,
     stars: 4,
     name: "Middlebury Standard Bed",
-    price: "237$",
+    price: 237,
     isNew: true,
   },
   {
@@ -42,7 +42,7 @@ export const newProducts: ProductList = [
     image: newProduct2,
     stars: 3,
     name: "Riya Low Profile Bed",
-    price: "237$",
+    price: 237,
     isNew: true,
   },
 ]
