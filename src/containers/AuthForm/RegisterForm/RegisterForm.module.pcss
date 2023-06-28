@@ -1,0 +1,44 @@
+.form {
+  max-width: 375px;
+
+  form {
+    width: 100%;
+  }
+}
+
+.input {
+  margin-bottom: 25px;
+}
+
+.terms {
+  margin: 20px 0;
+
+  .checkbox {
+    display: flex;
+
+    .label {
+      display: inline;
+      font-size: var(--text-size-static-xs);
+    }
+
+    .link {
+      display: inline;
+      border-bottom: var(--border-dark-1);
+      font-size: var(--text-size-static-xs);
+
+      &:hover {
+        border-bottom: var(--border-brand-1);
+      }
+    }
+  }
+}
+
+.selected {
+  border-bottom: var(--border-dark-1);
+  color: var(--color-dark);
+}
+
+.notSelected {
+  border-bottom: var(--border-transparent-1);
+  color: var(--color-gray);
+}

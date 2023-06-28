@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  max-width: 30px;
+  font-size: var(--text-size-m);
+  line-height: var(--text-lh-150);
+  margin: 0 26px;
+  text-align: center;
+  color: var(--color-dark);
+  border: none;
+  outline: none;
+
+  &:focus {
+    border-bottom: var(--border-dark-1);
+  }
+}
+
+.button {
+  height: fit-content;
+  padding: 2px;
+
+  path {
+    fill: #333333;
+  }
+
+  &:not(:disabled) {
+    &:hover {
+      border: var(--border-transparent-1);
+      background: var(--color-brand);
+    }
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

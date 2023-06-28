@@ -1,0 +1,46 @@
+.tip {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  top: 20px;
+  min-width: 70px;
+  height: 30px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.sale {
+  background: var(--color-red);
+}
+
+.new {
+  background: var(--color-green);
+}
+
+.left {
+  left: 0;
+  padding: 0 12px 0 0;
+  justify-content: flex-end;
+}
+
+.right {
+  right: 0;
+  padding: 0 0 0 12px;
+  justify-content: flex-start;
+}
+
+@media screen and (max-width: 834px) {
+  .tip {
+    min-width: 52px;
+    height: 20px;
+  }
+
+  .left {
+    padding: 0 7px 0 0;
+  }
+
+  .right {
+    padding: 0 0 0 7px;
+  }
+}

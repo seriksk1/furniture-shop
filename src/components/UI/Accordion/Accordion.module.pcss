@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: var(--border-gray-1);
+  cursor: pointer;
+
+  .title {
+  }
+
+  .icon {
+    transform: rotate(-90deg);
+    transition: 0.3s ease-in transform;
+
+    path {
+      fill: var(--color-dark);
+    }
+  }
+}
+
+.bottom {
+  height: 0;
+  overflow: hidden;
+}
+
+.active {
+  .top {
+    border-bottom: var(--border-brand-1);
+
+    .title {
+      color: var(--color-brand);
+    }
+
+    .icon {
+      transform: rotate(-270deg);
+    }
+  }
+
+  .bottom {
+    height: fit-content;
+    margin-top: 20px;
+  }
+}
