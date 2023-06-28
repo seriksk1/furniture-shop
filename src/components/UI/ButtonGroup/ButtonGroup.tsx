@@ -1,7 +1,7 @@
-import classNames from "classnames"
 import React from "react"
-import { ButtonProps } from "../Button/Button"
 import styles from "./ButtonGroup.module.pcss"
+import classNames from "classnames"
+import { ButtonProps } from "../Button/Button"
 
 interface ButtonGroupProps {
   className?: string

@@ -51,10 +51,14 @@
   }
 
   .answering {
+    display: flex;
+    align-items: flex-end;
     margin-top: 20px;
+    column-gap: 16px;
 
     input {
       width: 100%;
+      flex: 1;
       padding: 15px 0;
       outline: none;
       border: none;
@@ -72,6 +76,17 @@
         & ~ .label {
           color: var(--color-brand);
         }
+      }
+    }
+
+    .icon {
+      width: 25px;
+      height: 50px;
+      cursor: pointer;
+
+      &.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
       }
     }
   }

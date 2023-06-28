@@ -1,7 +1,9 @@
 import React from "react"
 import classNames from "classnames"
+import styles from "./MessageCard.module.pcss"
 import {
   Avatar,
+  IconButton,
   Rating,
   Typography,
   TypographyColors,
@@ -9,8 +11,7 @@ import {
   TypographyWeights,
 } from "../UI"
 import { MessageTypes } from "./enums"
-import { AnswerIcon } from "../../assets/icons"
-import styles from "./MessageCard.module.pcss"
+import { AnswerIcon, SendMessageIcon } from "../../assets/icons"
 
 interface MessageCardProps {
   className?: string
@@ -36,6 +37,12 @@ export const MessageCard: React.FC<MessageCardProps> = ({
     messageType === MessageTypes.question,
     messageType === MessageTypes.review,
   ]
+
+  const [answerMessage, setAnswerMessage] = React.useState("")
+
+  const onAnswerMessageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setAnswerMessage(e.target.value)
+  }
 
   return (
     <div className={classes}>
@@ -79,7 +86,15 @@ export const MessageCard: React.FC<MessageCardProps> = ({
 
       {isQuestion && (
         <div className={styles.answering}>
-          <input type="text" placeholder="Please, write your answer..." />
+          <input
+            type="text"
+            placeholder="Please, write your answer..."
+            value={answerMessage}
+            onChange={onAnswerMessageChange}
+          />
+          <IconButton className={styles.send} disabled={!answerMessage}>
+            <SendMessageIcon />
+          </IconButton>
         </div>
       )}
     </div>
